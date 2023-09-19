@@ -16,7 +16,7 @@ startup_form: null
 db_schema:
   units:
     client: none
-    server: search
+    server: full
     columns:
     - name: Ward
       type: number
@@ -58,5 +58,10 @@ db_schema:
       type: bool
       admin_ui: {width: 200, order: 12}
     title: Units
+  units2:
+    client: none
+    server: full
+    columns: []
+    title: Units2
 uplink_visible: true
 renamed: true
