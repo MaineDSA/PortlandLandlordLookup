@@ -1,0 +1,111 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: RichText
+    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+      foreground: '', visible: true, font_size: null, content: '# Vote No on A.
+
+        Portland landlords have put a measure on the November 7 ballot that will allow
+        landlords to gouge the rent on over 9,000 tenants previously protected by
+        rent control.
+
+
+        The initiative, if passed, means every tenant who lives in an apartment run
+        by a landlord with fewer than 10 units will now have to pay whatever the landlord
+        wants. Current law will limit rent increases in 2024 to less than 2%. If Question
+        A passes, a landlord could raise your rent 20%, 50%, 100% or even triple what
+        you pay now if they could find someone to pay it. Whatever they choose. Vote
+        No on A this November.', font: '', spacing_above: small, spacing_below: small,
+      data: null, background: '', format: markdown}
+    name: text_intro
+    layout_properties: {grid_position: 'VLXVPG,PHPCAX'}
+    components: []
+  - type: RichText
+    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+      foreground: '', visible: true, font_size: null, content: '## Where do you live?
+
+        We use this information to check whether you''re likely to be kicked off of
+        rent control if Question A passes.', font: '', spacing_above: small, spacing_below: small,
+      data: null, background: '', format: markdown}
+    name: text_ask
+    layout_properties: {grid_position: 'UQMQFM,LBJDUR'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Street Address,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: textbox_address
+    layout_properties: {grid_position: 'YMIMCE,UMCBIT'}
+    event_bindings: {pressed_enter: textbox_address_pressed_enter}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: 'Unit
+        Number (eg. 3, 100-2, A, 3C)', border: '', enabled: true, foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, type: text,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false}
+    name: textbox_address_unit
+    layout_properties: {grid_position: 'YMIMCE,KOPNTC'}
+    event_bindings: {pressed_enter: textbox_address_unit_pressed_enter}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Check My Unit, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: submit
+    layout_properties: {grid_position: 'YMIMCE,HBTFYF'}
+    event_bindings: {click: submit_click}
+  - type: RichText
+    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+      foreground: '', visible: false, font_size: null, content: '## Retrieved Information',
+      font: '', spacing_above: small, spacing_below: small, data: null, background: '',
+      format: markdown}
+    name: text_info_header
+    layout_properties: {grid_position: 'BFXNJP,QWCRKO'}
+  - type: RepeatingPanel
+    properties: {item_template: LandlordLookup.UnitListings}
+    name: units
+    layout_properties: {grid_position: 'MEAYDP,HCTAFL'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - type: Link
+    properties: {role: null, url: 'https://www.mainedsa.org?refcode=landlord-lookup',
+      align: left, tooltip: '', border: '', foreground: '', visible: true, text: Maine DSA,
+      font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
+      icon_align: left, col_widths: '', spacing_below: small, italic: false, background: '',
+      bold: false, underline: false, icon: ''}
+    name: mainedsa
+    layout_properties: {}
+  - type: Link
+    properties: {role: null, url: 'https://www.mainedsa.org/maine-dsa-campaigns-and-projects/vote-no-on-a?refcode=landlord-lookup',
+      align: left, tooltip: '', border: '', foreground: '', visible: true, text: No on A,
+      font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
+      icon_align: left, col_widths: '', spacing_below: small, italic: false, background: '',
+      bold: false, underline: false, icon: ''}
+    name: no_on_a
+    layout_properties: {}
+  - type: Link
+    properties: {role: null, url: 'https://secure.actblue.com/donate/mdsa-campaign-for-a-livable-portland-1?refcode=landlord-lookup',
+      align: left, tooltip: '', border: '', foreground: '', visible: true, text: Donate,
+      font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
+      icon_align: left, col_widths: '', spacing_below: small, italic: false, background: '',
+      bold: false, underline: false, icon: ''}
+    name: actblue
+    layout_properties: {}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: No on A! Keep tenants protected!, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: heading_page
+  layout_properties: {slot: title}
+custom_component: true
+properties: []
