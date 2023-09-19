@@ -6,8 +6,8 @@ components:
   properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
     foreground: '', visible: true, font_size: null, content: '### Matching Unit
 
-      Unit {unitNumber1} at {Address} {Likely} likely to be kicked off of rent control
-      if Question A passes.
+      Unit {unitNumber1} at {Address} {Likely} be kicked off of rent control if Question
+      A passes.
 
       The current rent for this {nbrBedRms1}-bedroom unit is listed as  ${CurrentRent1}.
 

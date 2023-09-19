@@ -18,9 +18,6 @@ db_schema:
     client: none
     server: full
     columns:
-    - name: Ward
-      type: number
-      admin_ui: {width: 200, order: 0}
     - name: 'Lic. #'
       type: string
       admin_ui: {width: 200, order: 1}
@@ -33,15 +30,6 @@ db_schema:
     - name: unitNumber1
       type: string
       admin_ui: {width: 200, order: 4}
-    - name: CurrentRent1
-      type: number
-      admin_ui: {width: 200, order: 5}
-    - name: BankedRent1
-      type: number
-      admin_ui: {width: 200, order: 6}
-    - name: nbrBedRms1
-      type: number
-      admin_ui: {width: 200, order: 7}
     - name: Owner 1
       type: string
       admin_ui: {width: 200, order: 8}
@@ -57,11 +45,54 @@ db_schema:
     - name: Likely to Exempt
       type: bool
       admin_ui: {width: 200, order: 12}
+    - {name: nbrBedRms1, admin_ui: null, type: string}
+    - {name: BankedRent1, admin_ui: null, type: string}
+    - {name: CurrentRent1, admin_ui: null, type: string}
+    - {name: Ward, admin_ui: null, type: string}
     title: Units
-  units2:
+  units_testing:
+    title: Units-testing
     client: none
     server: full
-    columns: []
-    title: Units2
+    columns:
+    - name: Ward
+      admin_ui: {width: 200}
+      type: number
+    - name: 'Lic. #'
+      admin_ui: {width: 200}
+      type: string
+    - name: Address
+      admin_ui: {width: 200}
+      type: string
+    - name: NumberOfRentalUnits
+      admin_ui: {width: 200}
+      type: number
+    - name: unitNumber1
+      admin_ui: {width: 200}
+      type: string
+    - name: CurrentRent1
+      admin_ui: {width: 200}
+      type: number
+    - name: BankedRent1
+      admin_ui: {width: 200}
+      type: number
+    - name: nbrBedRms1
+      admin_ui: {width: 200}
+      type: number
+    - name: Owner 1
+      admin_ui: {width: 200}
+      type: string
+    - name: Owner 2
+      admin_ui: {width: 200}
+      type: string
+    - name: Owner City
+      admin_ui: {width: 200}
+      type: string
+    - name: Owner State
+      admin_ui: {width: 200}
+      type: string
+    - name: Likely to Exempt
+      admin_ui: {width: 200}
+      type: bool
 uplink_visible: true
 renamed: true
