@@ -1,22 +1,22 @@
 dependencies: []
 services:
 - source: /runtime/services/tables.yml
-  client_config: {}
-  server_config: {}
+  client_config: {enable_v2: true}
+  server_config: {auto_create_missing_columns: true}
 startup: {type: form, module: LandlordLookup}
 package_name: LandlordLookup
-allow_embedding: false
+allow_embedding: true
 name: LandlordLookup
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-metadata: {title: LandlordLookup, description: 'Election Day: November 7, 2023 | Maine
-    DSA urges you to Vote No On A | If passed, Question A will kick thousands of tenants
-    off of rent control.'}
+metadata: {title: Question A Rent Control Checker - No on A!, description: 'Election
+    Day: November 7, 2023 | Maine DSA urges you to Vote No On A | If passed, Question
+    A will kick thousands of tenants off of rent control.', logo_img: 'https://www.mainedsa.org/wp-content/uploads/2023/07/Maine-DSA-Moose-with-Rose-Logo.svg'}
 startup_form: null
 db_schema:
   units:
-    client: search
-    server: full
+    client: none
+    server: search
     columns:
     - name: Ward
       type: number
@@ -58,4 +58,5 @@ db_schema:
       type: bool
       admin_ui: {width: 200, order: 12}
     title: Units
+uplink_visible: true
 renamed: true

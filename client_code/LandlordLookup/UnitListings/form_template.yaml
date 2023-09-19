@@ -9,9 +9,9 @@ components:
       Unit {unitNumber1} at {Address} {Likely} likely to be kicked off of rent control
       if Question A passes.
 
-      The current rent for your {nbrBedRms1}-bedroom unit is listed as  ${CurrentRent1}.
+      The current rent for this {nbrBedRms1}-bedroom unit is listed as  ${CurrentRent1}.
 
-      Your landlord is listed as {Owner 1}{Owner 2} of {Owner City}, {Owner State}.',
+      The landlord is listed as {Owner 1}{Owner 2} of {Owner City}, {Owner State}.',
     font: '', spacing_above: small, spacing_below: small, data: null, background: '',
     format: markdown}
   name: unit_info
