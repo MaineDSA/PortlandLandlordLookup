@@ -25,8 +25,14 @@ class LandlordLookup(LandlordLookupTemplate):
     if not found_buildings:
       self.retrievedinfo.visible = False
       return False
-    self.buildings.items = found_buildings
-    Notification('Found ' + str(len(self.buildings.items)) + 'matching units.')
+    Notification('Found ' + str(len(found_buildings)) + 'matching units.')
+
+    landlord_addresses = {}
+    for unit in found_buildings:
+      landlord_addresses[unit["Address"]] = unit
+    
+    Notification('Found ' + str(len(self.buildings.items)) + 'addresses listed.')
+    self.buildings.items = landlord_addresses
 
     if len(self.buildings.items) > 0:
       self.retrievedinfo.visible = True
