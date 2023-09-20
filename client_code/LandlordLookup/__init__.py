@@ -42,7 +42,9 @@ class LandlordLookup(LandlordLookupTemplate):
         firstname=self.tenantname_first.text,
         lastname=self.tenantname_last.text,
         email=self.tenantemail.text,
-        story=self.tenantstory.text
+        story=self.tenantstory.text,
+        address=self.textbox_address.text,
+        unit=self.textbox_address_unit.text
     )
     if saved_message:
       self.messagesubmitted.visible = True

@@ -9,5 +9,7 @@ def save_message(**kwargs):
       firstname = kwargs.get('firstname', None),
       lastname = kwargs.get('lastname', None),
       email = kwargs.get('email', None),
-      story = kwargs.get('story', None)
+      story = kwargs.get('story', None),
+      address = kwargs.get('address', None),
+      unit = kwargs.get('unit', None)
     )
