@@ -11,21 +11,31 @@ class UnitListings(UnitListingsTemplate):
     self.init_components(**properties)
 
     self.unittitle.text = self.item['Address'] + ', ' + self.item['unitNumber1']
-    self.unitnumber.text = self.item['unitNumber1']
-    self.unitaddress.text = self.item['Address']
-    self.unitbedrooms.text = self.item['nbrBedRms1']
-    if float(self.item['CurrentRent1']) == 0:
-      self.unitcurrentrent.text = "0, as your landlord has not reported this appropriately or the Housing Safety Office has not entered it into their systems"
-    else:
-      self.unitcurrentrent.text = self.item['CurrentRent1']
+
+    questiona = 'This unit '
     if self.item['Likely to Exempt'] == True:
-      self.unitislikely.text = 'is likely to'
-      self.disclaimer.text = ''
+      questiona += 'is likely to be kicked off of rent control if Question A passes.'
     else:
-      self.unitislikely.text = 'may not'
-      self.disclaimer.text = 'However, if the landlord were to change the ownership structure, it may suffer the same fate as the 4,300 other units we KNOW will no longer be protected.'
-    self.unitowner1.text = self.item['Owner 1']
-    self.unitowner2.text = self.item['Owner 2']
-    self.unitownercity.text = self.item['Owner City']
-    self.unitownerstate.text = self.item['Owner State']
+      questiona += 'may not be kicked off of rent control if Question A passes.'
+      questiona += ' However, if the landlord were to change the ownership structure, it may suffer the same fate as the 4,300 other units we KNOW will no longer be protected.'
+    self.questiona.text = questiona
+
+    currentrent = 'The current rent for this '
+    currentrent += self.item['nbrBedRms1']
+    currentrent += '-bedroom unit is listed as ' + self.item['CurrentRent1']
+    if float(self.item['CurrentRent1']) == 0:
+      currentrent += ', as your landlord has not reported this appropriately or the Housing Safety Office has not entered it into their systems.'
+    else:
+      currentrent += '.'
+    self.currentrent.text = currentrent
+
+    unitowner = 'The landlord is listed as '
+    unitowner += self.item['Owner 1']
+    unitowner += self.item['Owner 2']
+    unitowner += ' of '
+    unitowner += self.item['Owner City']
+    unitowner += ', '
+    unitowner += self.item['Owner State']
+    unitowner += '.'
+    self.unitowner.text = unitowner
 

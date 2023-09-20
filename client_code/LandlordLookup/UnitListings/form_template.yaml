@@ -6,80 +6,15 @@ components:
   properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
     foreground: '', visible: true, font_size: null, content: '### {Matching Unit}
 
-      Unit {unitNumber1} at {Address} {Likely} be kicked off of rent control if Question
-      A passes. {disclaimer}
+      {questionA}
 
-      The current rent for this {nbrBedRms1}-bedroom unit is listed as ${CurrentRent1}.
+      {currentRent}
 
-      The landlord is listed as {Owner 1}{Owner 2} of {Owner City}, {Owner State}.',
-    font: '', spacing_above: none, spacing_below: none, data: null, background: '',
-    format: markdown}
+      {unitOwner}', font: '', spacing_above: none, spacing_below: none, data: null,
+    background: '', format: markdown}
   name: unit_info
   layout_properties: {grid_position: 'QCTHCX,VNMEWX', full_width_row: false}
   components:
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
-      spacing_below: none, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: unitaddress
-    layout_properties: {slot: Address}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
-      spacing_below: none, italic: false, background: '', bold: true, underline: false,
-      icon: ''}
-    name: unitislikely
-    layout_properties: {slot: Likely}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
-      spacing_below: none, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: unitbedrooms
-    layout_properties: {slot: nbrBedRms1}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
-      spacing_below: none, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: unitowner1
-    layout_properties: {slot: Owner 1}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
-      spacing_below: none, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: unitowner2
-    layout_properties: {slot: Owner 2}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
-      spacing_below: none, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: unitownercity
-    layout_properties: {slot: Owner City}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
-      spacing_below: none, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: unitownerstate
-    layout_properties: {slot: Owner State}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
-      spacing_below: none, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: unitcurrentrent
-    layout_properties: {slot: CurrentRent1}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
-      spacing_below: none, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: unitnumber
-    layout_properties: {slot: unitNumber1}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
@@ -92,7 +27,21 @@ components:
       visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
       spacing_below: none, italic: false, background: '', bold: false, underline: false,
       icon: ''}
-    name: disclaimer
-    layout_properties: {slot: disclaimer}
+    name: questiona
+    layout_properties: {slot: questionA}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
+      spacing_below: none, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: currentrent
+    layout_properties: {slot: currentRent}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: none, icon_align: left,
+      spacing_below: none, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: unitowner
+    layout_properties: {slot: unitOwner}
   data_bindings: []
 is_package: true

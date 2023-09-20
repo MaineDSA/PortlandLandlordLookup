@@ -128,19 +128,10 @@ components:
       event_bindings: {}
 - type: FlowPanel
   properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
-    foreground: '', visible: true, spacing_above: small, spacing_below: small, background: ''}
+    foreground: '', visible: true, spacing_above: small, spacing_below: large, background: ''}
   name: navbar_links
   layout_properties: {slot: nav-right}
   components:
-  - type: Link
-    properties: {role: null, url: 'https://www.mainedsa.org?refcode=landlord-lookup',
-      align: left, tooltip: '', border: thin solid, foreground: 'theme:On Primary',
-      visible: true, text: Maine DSA, font_size: null, wrap_on: mobile, font: '',
-      col_spacing: medium, spacing_above: none, icon_align: left, col_widths: '',
-      spacing_below: medium, italic: false, background: '', bold: false, underline: false,
-      icon: 'fa:heart-o'}
-    name: mainedsa
-    layout_properties: {}
   - type: Link
     properties: {role: null, url: 'https://www.mainedsa.org/maine-dsa-campaigns-and-projects/vote-no-on-a?refcode=landlord-lookup',
       align: left, tooltip: '', border: thin solid, foreground: 'theme:On Primary',
