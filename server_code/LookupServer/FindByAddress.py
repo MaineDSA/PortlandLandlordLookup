@@ -5,8 +5,8 @@ import anvil.server
 
 @anvil.server.callable
 def find_by_address(**kwargs):
-  address = kwargs.get('address', None)
-  unit = kwargs.get('unit', None)
+  address = str(kwargs.get('address', None))
+  unit = str(kwargs.get('unit', None))
   
   # Find all units that match the address
   building_units = app_tables.units.search(
@@ -15,8 +15,14 @@ def find_by_address(**kwargs):
     )
   print("Found " + str(len(building_units)) + " building matches.")
 
-  # Give up if no units found at address 
-  if len(building_units) == 0:
+  landlord_addresses = {}
+  
+  for unit in building_units:
+    landlord_addresses[unit['Address']] = unit
+
+  # Give up if no units found at address
+  print("Found " + str(len(landlord_addresses)) + " addresses associated with this entity.")
+  if len(landlord_addresses) == 0:
     return False
   
   # Find all units that match the unit AND the address

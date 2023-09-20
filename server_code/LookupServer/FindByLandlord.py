@@ -5,8 +5,8 @@ import anvil.server
 
 @anvil.server.callable
 def find_by_landlord(**kwargs):
-  landlord = kwargs.get('landlord', None)
-  print(landlord)
+  landlord = str(kwargs.get('landlord', None))
+
   # Find all units that match the landlord name
   units = app_tables.units.search(q.any_of(
       #tables.order_by('unitNumber1'),
