@@ -3,7 +3,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {enable_v2: true}
   server_config: {auto_create_missing_columns: true}
-startup: {type: form, module: LandlordLookup}
+startup: {type: form, module: UnitLookup}
 package_name: LandlordLookup
 allow_embedding: true
 name: LandlordLookup

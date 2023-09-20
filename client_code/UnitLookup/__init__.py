@@ -1,11 +1,11 @@
-from ._anvil_designer import LandlordLookupTemplate
+from ._anvil_designer import UnitLookupTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-class LandlordLookup(LandlordLookupTemplate):
+class UnitLookup(UnitLookupTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -25,10 +25,24 @@ class LandlordLookup(LandlordLookupTemplate):
 
     if len(self.units.items) > 0:
       self.tenantcontact.visible = True
-
+  
   # Triggering when button is clicked
-  def search_click(self, **event_args):
+  def submit_click(self, **event_args):
     self.query_lookup()
 
-  def textbox_landlord_pressed_enter(self, **event_args):
+  def textbox_pressed_enter(self, **event_args):
     self.query_lookup()
+
+  def tenantinfo_submit_click(self, **event_args):
+    saved_message = anvil.server.call(
+        'save_message',
+        firstname=self.tenantname_first.text,
+        lastname=self.tenantname_last.text,
+        email=self.tenantemail.text,
+        story=self.tenantstory.text,
+        address=self.textbox_address.text,
+        unit=self.textbox_address_unit.text
+    )
+    if saved_message:
+      self.messagesubmitted.visible = True
+      self.tenantcontact.visible = False      
