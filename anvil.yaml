@@ -101,5 +101,10 @@ db_schema:
     - name: Likely to Exempt
       admin_ui: {width: 200}
       type: bool
+  messages:
+    client: none
+    server: full
+    columns: []
+    title: Messages
 uplink_visible: true
 renamed: true

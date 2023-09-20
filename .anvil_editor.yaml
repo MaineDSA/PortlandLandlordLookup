@@ -5,6 +5,7 @@ unique_ids:
   modules: {}
   server_modules:
     Lookup: '169512125552717553981936.6779'
+    SubmitMessage: '1695220941298976915190963.4902'
   assets:
     standard-page.html: QA7N5QES7GAV5Z6GHBQXVRY3TVG5H6AE
     theme.css: ACLIQBW6QMSH5QVEMBGNAWMISLK525GG

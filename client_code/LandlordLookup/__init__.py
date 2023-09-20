@@ -35,3 +35,15 @@ class LandlordLookup(LandlordLookupTemplate):
 
   def textbox_address_unit_pressed_enter(self, **event_args):
     self.query_lookup()
+
+  def tenantinfo_submit_click(self, **event_args):
+    saved_message = anvil.server.call(
+        'save_message',
+        firstname=self.tenantname_first.text,
+        lastname=self.tenantname_last.text,
+        email=self.tenantemail.text,
+        story=self.tenantstory.text
+    )
+    if saved_message:
+      self.messagesubmitted.visible = True
+      self.tenantcontact.visible = False      
