@@ -11,14 +11,11 @@ class UnitLookup(UnitLookupTemplate):
     self.init_components(**properties)
     url_query = get_url_hash()
     if url_query:
-      if 'l' in url_query:
-        open_form('LandlordLookup')
-      else:
-        if 'u' in url_query:
-          self.textbox_address_unit.text = url_query['u']
-        if 'a' in url_query:
-          self.textbox_address.text = url_query['a']
-          self.query_lookup()
+      if 'u' in url_query:
+        self.textbox_address_unit.text = url_query['u']
+      if 'a' in url_query:
+        self.textbox_address.text = url_query['a']
+        self.query_lookup()
 
   def query_lookup(self):
     # Give up if no address is supplied
@@ -28,12 +25,14 @@ class UnitLookup(UnitLookupTemplate):
 
     found_units = anvil.server.call('find_by_address', address=self.textbox_address.text, unit=self.textbox_address_unit.text)
     if not found_units:
+      self.retrievedinfo.visible = True
       self.tenantcontact.visible = False
       return False
     self.units.items = found_units
     Notification('Found ' + str(len(self.units.items)) + 'matching units.')
 
     if len(self.units.items) > 0:
+      self.retrievedinfo.visible = True
       self.tenantcontact.visible = True
 
   # Triggering when button is clicked
@@ -56,6 +55,3 @@ class UnitLookup(UnitLookupTemplate):
     if saved_message:
       self.messagesubmitted.visible = True
       self.tenantcontact.visible = False
-
-  def lookuplandlord_click(self, **event_args):
-    open_form('LandlordLookup')
