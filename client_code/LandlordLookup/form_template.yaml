@@ -127,39 +127,41 @@ components:
       layout_properties: {grid_position: 'HCXNSG,OVZLTY'}
       event_bindings: {}
 - type: FlowPanel
-  properties: {}
+  properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
+    foreground: '', visible: true, spacing_above: small, spacing_below: small, background: ''}
   name: navbar_links
   layout_properties: {slot: nav-right}
   components:
   - type: Link
     properties: {role: null, url: 'https://www.mainedsa.org?refcode=landlord-lookup',
-      align: left, tooltip: '', border: '', foreground: '', visible: true, text: Maine DSA,
-      font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
-      icon_align: left, col_widths: '', spacing_below: small, italic: false, background: '',
-      bold: false, underline: false, icon: 'fa:heart-o'}
+      align: left, tooltip: '', border: thin solid, foreground: 'theme:On Primary',
+      visible: true, text: Maine DSA, font_size: null, wrap_on: mobile, font: '',
+      col_spacing: medium, spacing_above: none, icon_align: left, col_widths: '',
+      spacing_below: medium, italic: false, background: '', bold: false, underline: false,
+      icon: 'fa:heart-o'}
     name: mainedsa
     layout_properties: {}
   - type: Link
     properties: {role: null, url: 'https://www.mainedsa.org/maine-dsa-campaigns-and-projects/vote-no-on-a?refcode=landlord-lookup',
-      align: left, tooltip: '', border: '', foreground: '', visible: true, text: No on A,
-      font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
-      icon_align: left, col_widths: '', spacing_below: small, italic: false, background: '',
-      bold: false, underline: false, icon: 'fa:thumbs-o-down'}
+      align: left, tooltip: '', border: thin solid, foreground: 'theme:On Primary',
+      visible: true, text: No on A, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: none, icon_align: left, col_widths: '', spacing_below: medium,
+      italic: false, background: '', bold: false, underline: false, icon: 'fa:thumbs-o-down'}
     name: no_on_a
     layout_properties: {}
   - type: Link
     properties: {role: null, url: 'https://secure.actblue.com/donate/mdsa-campaign-for-a-livable-portland-1?refcode=landlord-lookup',
-      align: left, tooltip: '', border: '', foreground: '', visible: true, text: Donate,
-      font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
-      icon_align: left, col_widths: '', spacing_below: small, italic: false, background: '',
-      bold: false, underline: false, icon: 'fa:money'}
+      align: left, tooltip: '', border: thin solid, foreground: 'theme:On Primary',
+      visible: true, text: Donate, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: none, icon_align: left, col_widths: '', spacing_below: medium,
+      italic: false, background: '', bold: false, underline: false, icon: 'fa:money'}
     name: actblue
     layout_properties: {}
 - type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: No on A! Keep tenants protected!, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:On
+      Primary', visible: true, text: No on A! Keep tenants protected!, font_size: null,
+    font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+    background: '', bold: true, underline: false, icon: ''}
   name: heading_page
   layout_properties: {slot: title}
 custom_component: true
