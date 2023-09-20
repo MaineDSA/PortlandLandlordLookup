@@ -16,7 +16,7 @@ class LandlordLookup(LandlordLookupTemplate):
       Notification("No landlord name entered.")
       return False
 
-    found_units = anvil.server.call('find_units', landlord=self.textbox_landlord.text)
+    found_units = anvil.server.call('find_by_landlord', landlord=self.textbox_landlord.text)
     if not found_units:
       return False
     self.units.items = found_units

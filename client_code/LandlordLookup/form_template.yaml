@@ -12,27 +12,28 @@ components:
     properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
       foreground: '', visible: true, font_size: null, content: '# Vote No on A.
 
-        Portland landlords have once again put a ballot initiative to break rent control
-        on the ballot. This time, their goal is to exempt thousands of currently-protected
-        units from rent control in Portland.
-
-
-        If passed, the initiative would allow any landlord with fewer than 10 units
-        to charge whatever they want instead of the <2% currently allowed for 2024.
-        If Question A passes, a landlord could once again set their units rents to
-        whatever they would like. Vote No on A on November 7 to protect rent control.',
-      font: '', spacing_above: small, spacing_below: small, data: null, background: '',
-      format: markdown}
+        Portland landlords have once again brought a ballot initiative to break rent
+        control to Portland voters. This time, their goal is to exempt thousands of
+        currently-protected units from rent control in Portland. If passed, the initiative
+        would allow any landlord with fewer than 10 units to charge whatever they
+        want instead of the <2% currently allowed for 2024. Vote No on A on November
+        7 to protect rent control.', font: '', spacing_above: small, spacing_below: small,
+      data: null, background: '', format: markdown}
     name: text_intro
     layout_properties: {grid_position: 'VLXVPG,PHPCAX'}
     components: []
   - type: RichText
     properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-      foreground: '', visible: true, font_size: null, content: '## Where do you live?
+      foreground: '', visible: true, font_size: null, content: '## "Who" is your landlord?
 
-        We use this information to check whether you''re likely to be kicked off of
-        rent control if Question A passes.', font: '', spacing_above: small, spacing_below: small,
-      data: null, background: '', format: markdown}
+        These, days landlords typically [hide their holdings](https://shelterforce.org/2022/08/23/when-landlords-hide-behind-llcs/)
+        within Limited Liability Companies (LLCs) which come with many benefits (for
+        the landlord) like hiding who actually owns your building!
+
+
+        While we might not be able to tell you who owns your building, we *can* tell
+        you what other buildings are owned by the same LLC.', font: '', spacing_above: small,
+      spacing_below: small, data: null, background: '', format: markdown}
     name: text_ask
     layout_properties: {grid_position: 'UQMQFM,LBJDUR'}
   - type: TextBox
@@ -58,10 +59,11 @@ components:
       format: markdown}
     name: text_info_header
     layout_properties: {grid_position: 'BFXNJP,BJXWTP'}
-  - type: RepeatingPanel
-    properties: {item_template: UnitLookup.UnitListings}
-    name: units
-    layout_properties: {grid_position: 'MEAYDP,HCTAFL'}
+    components:
+    - type: RepeatingPanel
+      properties: {item_template: LandlordLookup.LandlordBuildings}
+      name: repeating_panel_1
+      layout_properties: {}
   - type: RichText
     properties: {role: null, align: right, tooltip: '', enable_slots: true, border: '',
       foreground: '', visible: true, font_size: null, content: 'Made with ❤️ by [Maine

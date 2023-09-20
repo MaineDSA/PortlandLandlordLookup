@@ -12,17 +12,13 @@ components:
     properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
       foreground: '', visible: true, font_size: null, content: '# Vote No on A.
 
-        Portland landlords have once again put a ballot initiative to break rent control
-        on the ballot. This time, their goal is to exempt thousands of currently-protected
-        units from rent control in Portland.
-
-
-        If passed, the initiative would allow any landlord with fewer than 10 units
-        to charge whatever they want instead of the <2% currently allowed for 2024.
-        If Question A passes, a landlord could once again set their units rents to
-        whatever they would like. Vote No on A on November 7 to protect rent control.',
-      font: '', spacing_above: small, spacing_below: small, data: null, background: '',
-      format: markdown}
+        Portland landlords have once again brought a ballot initiative to break rent
+        control to Portland voters. This time, their goal is to exempt thousands of
+        currently-protected units from rent control in Portland. If passed, the initiative
+        would allow any landlord with fewer than 10 units to charge whatever they
+        want instead of the <2% currently allowed for 2024. Vote No on A on November
+        7 to protect rent control.', font: '', spacing_above: small, spacing_below: small,
+      data: null, background: '', format: markdown}
     name: text_intro
     layout_properties: {grid_position: 'VLXVPG,PHPCAX'}
     components: []
@@ -67,7 +63,7 @@ components:
     name: text_info_header
     layout_properties: {grid_position: 'BFXNJP,BJXWTP'}
   - type: RepeatingPanel
-    properties: {item_template: UnitLookup.UnitListings}
+    properties: {item_template: UnitLookup.BuildingUnits}
     name: units
     layout_properties: {grid_position: 'MEAYDP,HCTAFL'}
   - type: ColumnPanel

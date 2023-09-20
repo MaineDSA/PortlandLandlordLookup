@@ -4,7 +4,7 @@ from anvil.tables import app_tables
 import anvil.server
 
 @anvil.server.callable
-def find_units(**kwargs):
+def find_by_address(**kwargs):
   address = kwargs.get('address', None)
   unit = kwargs.get('unit', None)
   
@@ -35,7 +35,7 @@ def find_units(**kwargs):
     return building_units
 
 @anvil.server.callable
-def find_buildings(**kwargs):
+def find_by_landlord(**kwargs):
   landlord = kwargs.get('landlord', None)
   
   # Find all units that match the address

@@ -1,11 +1,11 @@
-from ._anvil_designer import UnitListingsTemplate
+from ._anvil_designer import BuildingUnitsTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-class UnitListings(UnitListingsTemplate):
+class BuildingUnits(BuildingUnitsTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -22,7 +22,7 @@ class UnitListings(UnitListingsTemplate):
 
     currentrent = 'The current rent for this '
     currentrent += self.item['nbrBedRms1']
-    currentrent += '-bedroom unit is listed as ' + self.item['CurrentRent1']
+    currentrent += '-bedroom unit is listed as $' + self.item['CurrentRent1']
     if float(self.item['CurrentRent1']) == 0:
       currentrent += ', as your landlord has not reported this appropriately or the Housing Safety Office has not entered it into their systems.'
     else:

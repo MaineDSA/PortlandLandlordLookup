@@ -9,6 +9,13 @@ class UnitLookup(UnitLookupTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    url_query = get_url_hash()
+    if url_query:
+      print(url_query)
+      if address in url_query:
+        self.textbox_address.text = url_query.address
+      if unit in url_query:
+        self.textbox_address_unit.text = url_query.unit
 
   def query_lookup(self):
     # Give up if no address is supplied
@@ -16,7 +23,7 @@ class UnitLookup(UnitLookupTemplate):
       Notification("No street address entered.")
       return False
 
-    found_units = anvil.server.call('find_units', address=self.textbox_address.text, unit=self.textbox_address_unit.text)
+    found_units = anvil.server.call('find_by_address', address=self.textbox_address.text, unit=self.textbox_address_unit.text)
     if not found_units:
       self.tenantcontact.visible = False
       return False
