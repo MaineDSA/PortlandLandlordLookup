@@ -7,7 +7,7 @@ components:
     foreground: '', visible: true, font_size: null, content: '### {Matching Unit}
 
       Unit {unitNumber1} at {Address} {Likely} be kicked off of rent control if Question
-      A passes.
+      A passes. {disclaimer}
 
       The current rent for this {nbrBedRms1}-bedroom unit is listed as  ${CurrentRent1}.
 
@@ -60,4 +60,8 @@ components:
     properties: {}
     name: unittitle
     layout_properties: {slot: Matching Unit}
+  - type: Label
+    properties: {}
+    name: disclaimer
+    layout_properties: {slot: disclaimer}
 is_package: true

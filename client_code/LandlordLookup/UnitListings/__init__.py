@@ -17,8 +17,10 @@ class UnitListings(UnitListingsTemplate):
     self.unitcurrentrent.text = self.item['CurrentRent1']
     if self.item['Likely to Exempt'] == True:
       self.unitislikely.text = 'is likely to'
+      self.disclaimer.text = ''
     else:
       self.unitislikely.text = 'may not'
+      self.disclaimer.text = 'However, if the landlord were to change the ownership structure, it may suffer the same fate as the 4,300 other units we KNOW will no longer be protected.'
     self.unitowner1.text = self.item['Owner 1']
     self.unitowner2.text = self.item['Owner 2']
     self.unitownercity.text = self.item['Owner City']
