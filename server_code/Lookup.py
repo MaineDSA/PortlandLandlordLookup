@@ -3,10 +3,6 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 
-# This is a server module. It runs on the Anvil server,
-# rather than in the user's browser.
-#
-
 @anvil.server.callable
 def find_units(**kwargs):
   address = kwargs.get('address', None)
@@ -35,5 +31,7 @@ def find_units(**kwargs):
   # If not, show the building matches
   if (type(unit_matches) == anvil.tables.v2._search.SearchIterator) & (len(unit_matches) > 0):
     return unit_matches
-  else:
+  elif (type(unit_matches) == anvil.tables.v2._search.SearchIterator):
     return building_units
+  else:
+    return False
