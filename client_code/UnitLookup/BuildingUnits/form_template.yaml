@@ -13,7 +13,7 @@ components:
       {unitOwner}', font: '', spacing_above: none, spacing_below: none, data: null,
     background: '', format: markdown}
   name: unit_info
-  layout_properties: {grid_position: 'QCTHCX,VNMEWX', full_width_row: false}
+  layout_properties: {grid_position: 'JKBFXG,SCUTQF', full_width_row: false}
   components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',

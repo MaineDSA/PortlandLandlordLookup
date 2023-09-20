@@ -11,11 +11,11 @@ class UnitLookup(UnitLookupTemplate):
     self.init_components(**properties)
     url_query = get_url_hash()
     if url_query:
-      print(url_query)
-      if address in url_query:
-        self.textbox_address.text = url_query.address
-      if unit in url_query:
-        self.textbox_address_unit.text = url_query.unit
+      if 'a' in url_query:
+        self.textbox_address.text = url_query['a']
+      if 'u' in url_query:
+        self.textbox_address_unit.text = url_query['u']
+        self.query_lookup()
 
   def query_lookup(self):
     # Give up if no address is supplied

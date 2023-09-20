@@ -9,6 +9,11 @@ class LandlordLookup(LandlordLookupTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    url_query = get_url_hash()
+    if url_query:
+      if 'l' in url_query:
+        self.textbox_landlord.text = url_query['l']
+        self.query_lookup()
 
   def query_lookup(self):
     # Give up if no address is supplied
@@ -16,10 +21,10 @@ class LandlordLookup(LandlordLookupTemplate):
       Notification("No landlord name entered.")
       return False
 
-    found_units = anvil.server.call('find_by_landlord', landlord=self.textbox_landlord.text)
+    found_buildings = anvil.server.call('find_by_landlord', landlord=self.textbox_landlord.text)
     if not found_units:
       return False
-    self.units.items = found_units
+    self.buildings.items = found_buildings
     Notification('Found ' + str(len(self.units.items)) + 'matching units.')
 
   # Triggering when button is clicked

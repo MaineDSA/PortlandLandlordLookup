@@ -62,6 +62,10 @@ components:
     components:
     - type: RepeatingPanel
       properties: {item_template: LandlordLookup.LandlordBuildings}
+      name: buildings
+      layout_properties: {}
+    - type: RepeatingPanel
+      properties: {item_template: LandlordLookup.LandlordBuildings}
       name: repeating_panel_1
       layout_properties: {}
   - type: RichText

@@ -10,7 +10,5 @@ class LandlordBuildings(LandlordBuildingsTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    # Any code you write here will run before the form opens.
-
     self.address.text = 'test'
     self.numberofrentalunits.text = 0
