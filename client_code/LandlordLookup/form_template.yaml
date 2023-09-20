@@ -12,18 +12,17 @@ components:
     properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
       foreground: '', visible: true, font_size: null, content: '# Vote No on A.
 
-        Portland landlords have put a measure on the November 7 ballot that will allow
-        landlords to gouge the rent on over 9,000 tenants previously protected by
-        rent control.
+        Portland landlords have once again put a ballot initiative to break rent control
+        on the ballot. This time, their goal is to exempt thousands of currently-protected
+        units from rent control in Portland.
 
 
-        The initiative, if passed, means every tenant who lives in an apartment run
-        by a landlord with fewer than 10 units will now have to pay whatever the landlord
-        wants. Current law will limit rent increases in 2024 to less than 2%. If Question
-        A passes, a landlord could raise your rent 20%, 50%, 100% or even triple what
-        you pay now if they could find someone to pay it. Whatever they choose. Vote
-        No on A this November.', font: '', spacing_above: small, spacing_below: small,
-      data: null, background: '', format: markdown}
+        If passed, the initiative would allow any landlord with fewer than 10 units
+        to charge whatever they want instead of the <2% currently allowed for 2024.
+        If Question A passes, a landlord could once again set their units rents to
+        whatever they would like. Vote No on A on November 7 to protect rent control.',
+      font: '', spacing_above: small, spacing_below: small, data: null, background: '',
+      format: markdown}
     name: text_intro
     layout_properties: {grid_position: 'VLXVPG,PHPCAX'}
     components: []
