@@ -10,8 +10,8 @@ components:
       control to Portland voters. This time, their goal is to exempt thousands of
       currently-protected units from rent control in Portland. If passed, the initiative
       would allow any landlord with fewer than 10 units to charge whatever they want
-      instead of the <2% currently allowed for 2024. Vote No on A on November 7 to
-      protect rent control.', font: '', spacing_above: small, spacing_below: small,
+      instead of the <2% base rent increase currently allowed for 2024. Vote No on
+      A on November 7 to protect rent control.', font: '', spacing_above: small, spacing_below: small,
     data: null, background: '', format: markdown}
   name: text_intro
   layout_properties:
