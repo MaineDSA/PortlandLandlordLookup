@@ -1,6 +1,6 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{"KSPEXP":25,"EZVARN":20,"TLPGBC":15}'}
+  properties: {col_widths: '{"KSPEXP":25,"EZVARN":20,"TLPGBC":15,"YZAYRO":45,"UITXJZ":15}'}
 components:
 - type: RichText
   properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
@@ -75,13 +75,28 @@ components:
     layout_properties:
       col_widths: {}
       grid_position: VWVKYU,HODGDF
-    components:
-    - type: RepeatingPanel
-      properties: {item_template: UnitLookup.BuildingUnits}
-      name: units
-      layout_properties:
-        col_widths: {}
-        grid_position: NYXYQD,GFAQOJ
+    components: []
+- type: Spacer
+  properties: {visible: true, spacing_above: small, spacing_below: small, height: '20',
+    tooltip: ''}
+  name: spacer_1
+  layout_properties: {grid_position: 'DIKMRQ,UITXJZ ROOFPB,SYHYSK'}
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Copy Link, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: 'fa:clipboard'}
+  name: copylink
+  layout_properties:
+    col_widths: {}
+    grid_position: DIKMRQ,UITXJZ VLYQUW,ILBPJU
+  event_bindings: {click: copylink_click}
+- type: RepeatingPanel
+  properties: {item_template: UnitLookup.BuildingUnits}
+  name: units
+  layout_properties:
+    col_widths: {}
+    grid_position: IXGZCU,JQOTLR
 - type: ColumnPanel
   properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
     wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',

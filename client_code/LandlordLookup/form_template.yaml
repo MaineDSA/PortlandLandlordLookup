@@ -65,7 +65,8 @@ components:
     grid_position: HEQBTL,IMGZNN
   components: []
 - type: Spacer
-  properties: {height: 14}
+  properties: {visible: true, spacing_above: small, spacing_below: small, height: '20',
+    tooltip: ''}
   name: spacer_1
   layout_properties: {grid_position: 'HEQBTL,NJAFPW ITRNCZ,XPBLVY'}
 - type: Button

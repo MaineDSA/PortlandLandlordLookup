@@ -4,6 +4,7 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from anvil.js.window import navigator
 
 class UnitLookup(UnitLookupTemplate):
   def __init__(self, **properties):
@@ -55,3 +56,6 @@ class UnitLookup(UnitLookupTemplate):
     if saved_message:
       self.messagesubmitted.visible = True
       self.tenantcontact.visible = False
+
+  def copylink_click(self, **event_args):
+    navigator.clipboard.writeText("https://no-on-a.anvil.app/#?a=" + self.textbox_address.text + "&u=" + self.textbox_address_unit.text)
