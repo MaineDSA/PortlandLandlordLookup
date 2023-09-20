@@ -110,7 +110,7 @@ components:
         background: '', bold: false, underline: false}
       name: tenantemail
       layout_properties: {grid_position: 'JBJNVS,GXIUSJ'}
-      event_bindings: {pressed_enter: outlined_1_pressed_enter}
+      event_bindings: {}
     - type: TextArea
       properties: {role: null, align: left, height: '', tooltip: '', placeholder: 'Do
           you have a story to share? A comment for us?', border: '', enabled: true,
