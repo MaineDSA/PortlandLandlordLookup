@@ -42,7 +42,7 @@ components:
       background: '', bold: false, underline: false}
     name: landlord
     layout_properties: {grid_position: 'YMIMCE,UMCBIT'}
-    event_bindings: {pressed_enter: textbox_landlord_pressed_enter}
+    event_bindings: {pressed_enter: textbox_pressed_enter}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: Search, font_size: null, font: '', spacing_above: small,
@@ -62,77 +62,6 @@ components:
     properties: {item_template: UnitLookup.UnitListings}
     name: units
     layout_properties: {grid_position: 'MEAYDP,HCTAFL'}
-  - type: ColumnPanel
-    properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
-      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-      spacing_below: small, background: ''}
-    name: messagesubmitted
-    layout_properties: {grid_position: 'RIRBTK,VHFGEC'}
-    components:
-    - type: RichText
-      properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-        foreground: '', visible: true, font_size: null, content: '##  Contact Us
-
-          Your message has been submitted.', font: '', spacing_above: small, spacing_below: small,
-        data: null, background: '', format: markdown}
-      name: textmessagesubmitted
-      layout_properties: {grid_position: 'LOERWQ,KFEWJO'}
-  - type: ColumnPanel
-    properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
-      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-      spacing_below: small, background: ''}
-    name: tenantcontact
-    layout_properties: {grid_position: 'PJJWVM,ZHLNMQ'}
-    components:
-    - type: RichText
-      properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-        foreground: '', visible: true, font_size: null, content: '## Contact Us
-
-          Want to learn more and help keep Portland tenants safe? Leave your name
-          and email here!', font: '', spacing_above: small, spacing_below: small,
-        data: null, background: '', format: markdown}
-      name: textcontacttitle
-      layout_properties: {grid_position: 'KYQKDC,DZBBWK'}
-      components: []
-    - type: TextBox
-      properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: First Name,
-        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-        background: '', bold: false, underline: false}
-      name: tenantname_first
-      layout_properties: {grid_position: 'JBJNVS,TBQOFW'}
-    - type: TextBox
-      properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: Last Name,
-        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-        background: '', bold: false, underline: false}
-      name: tenantname_last
-      layout_properties: {grid_position: 'JBJNVS,MHSCBY'}
-      event_bindings: {}
-    - type: TextBox
-      properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: Email Address,
-        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-        background: '', bold: false, underline: false}
-      name: tenantemail
-      layout_properties: {grid_position: 'JBJNVS,GXIUSJ'}
-      event_bindings: {}
-    - type: TextArea
-      properties: {role: null, align: left, height: '', tooltip: '', placeholder: 'Do
-          you have a story to share? A comment for us?', border: '', enabled: true,
-        foreground: '', visible: true, text: '', font_size: null, auto_expand: false,
-        font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
-        bold: false, underline: false}
-      name: tenantstory
-      layout_properties: {grid_position: 'YVAZBP,CDQISR'}
-    - type: Button
-      properties: {role: outlined-button, align: center, tooltip: '', border: '',
-        enabled: true, foreground: '', visible: true, text: Send, font_size: null,
-        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-        background: '', bold: false, underline: false, icon: 'fa:paper-plane-o'}
-      name: tenantinfo_submit
-      layout_properties: {grid_position: 'HCXNSG,OVZLTY'}
-      event_bindings: {click: tenantinfo_submit_click}
   - type: RichText
     properties: {role: null, align: right, tooltip: '', enable_slots: true, border: '',
       foreground: '', visible: true, font_size: null, content: 'Made with ❤️ by [Maine

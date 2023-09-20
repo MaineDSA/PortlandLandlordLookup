@@ -191,7 +191,7 @@ components:
       icon: ''}
     name: lookupunits
     layout_properties: {grid_position: 'POQABV,IKRRCH'}
-    event_bindings: {click: link_1_click}
+    event_bindings: {}
   - type: Link
     properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: '[COMING SOON] Landlords', font_size: null, wrap_on: mobile,

@@ -30,7 +30,7 @@ class LandlordLookup(LandlordLookupTemplate):
   def search_click(self, **event_args):
     self.query_lookup()
 
-  def textbox_landlord_pressed_enter(self, **event_args):
+  def textbox_pressed_enter(self, **event_args):
     self.query_lookup()
 
   def lookupunits_click(self, **event_args):
