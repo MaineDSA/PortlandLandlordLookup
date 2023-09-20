@@ -28,7 +28,11 @@ components:
 
 
       While we might not be able to tell you who owns your building, we *can* tell
-      you what other buildings are owned by the same LLC.', font: '', spacing_above: small,
+      you what other buildings are owned by the same LLC.
+
+
+      The search is ''fuzzy,'' so if you search Redfern you''ll also get REDFERN BAYSIDE,
+      REDFERN LONGFELLOW, LONGFELLOW MEWS, etc.', font: '', spacing_above: small,
     spacing_below: small, data: null, background: '', format: markdown}
   name: text_ask
   layout_properties:

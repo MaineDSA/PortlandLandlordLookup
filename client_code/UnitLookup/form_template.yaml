@@ -23,8 +23,11 @@ components:
     foreground: '', visible: true, font_size: null, content: '## Where do you live?
 
       We use this information to check whether you''re likely to be kicked off of
-      rent control if Question A passes.', font: '', spacing_above: small, spacing_below: small,
-    data: null, background: '', format: markdown}
+      rent control if Question A passes.
+
+
+      If you don''t specify a unit, it''ll show the whole building.', font: '', spacing_above: small,
+    spacing_below: small, data: null, background: '', format: markdown}
   name: text_ask
   layout_properties:
     col_widths: {}
