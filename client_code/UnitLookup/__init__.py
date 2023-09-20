@@ -11,11 +11,14 @@ class UnitLookup(UnitLookupTemplate):
     self.init_components(**properties)
     url_query = get_url_hash()
     if url_query:
-      if 'a' in url_query:
-        self.textbox_address.text = url_query['a']
-      if 'u' in url_query:
-        self.textbox_address_unit.text = url_query['u']
-        self.query_lookup()
+      if 'l' in url_query:
+        open_form('LandlordLookup')
+      else:
+        if 'u' in url_query:
+          self.textbox_address_unit.text = url_query['u']
+        if 'a' in url_query:
+          self.textbox_address.text = url_query['a']
+          self.query_lookup()
 
   def query_lookup(self):
     # Give up if no address is supplied
@@ -32,7 +35,7 @@ class UnitLookup(UnitLookupTemplate):
 
     if len(self.units.items) > 0:
       self.tenantcontact.visible = True
-  
+
   # Triggering when button is clicked
   def submit_click(self, **event_args):
     self.query_lookup()
