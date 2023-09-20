@@ -15,7 +15,7 @@ class UnitListings(UnitListingsTemplate):
     self.unitaddress.text = self.item['Address']
     self.unitbedrooms.text = self.item['nbrBedRms1']
     if float(self.item['CurrentRent1']) == 0:
-      self.unitcurrentrent.text = "0, as they have not provided this information"
+      self.unitcurrentrent.text = "0, as your landlord has not reported this appropriately or the Housing Safety Office has not entered it into their systems"
     else:
       self.unitcurrentrent.text = self.item['CurrentRent1']
     if self.item['Likely to Exempt'] == True:

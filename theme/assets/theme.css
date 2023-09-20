@@ -106,6 +106,10 @@ body {
   min-height: calc(100vh - 56px)
 }
 
+h1,h2,h3 {
+  font-family: Calistoga, Lexend, Roboto, Noto, Arial, sans-serif;
+}
+
 @media print {
   body {
     background-color: white;
