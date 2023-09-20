@@ -21,13 +21,13 @@ class BuildingUnits(BuildingUnitsTemplate):
       questiona += ' However, if the landlord changes the ownership structure this unit could easily suffer the same fate as the 4,300 other units we have identified as likely to lose protections.'
     self.questiona.text = questiona
 
-    currentrent = 'The current rent for this '
+    currentrent = 'The official rent for this '
     currentrent += self.item['nbrBedRms1']
-    currentrent += '-bedroom unit is listed as $' + self.item['CurrentRent1']
+    currentrent += '-bedroom unit as of November 2022 was $' + self.item['CurrentRent1']
     if self.item['CurrentRent1'] == "":
       currentrent += '.'
     elif float(self.item['CurrentRent1']) == 0:
-      currentrent += ', as your landlord has not reported this appropriately or the Housing Safety Office has not entered it into their systems.'
+      currentrent += ', as the landlord has not reported this appropriately or the Housing Safety Office has not entered it into their systems.'
     else:
       currentrent += '.'
     self.currentrent.text = currentrent
