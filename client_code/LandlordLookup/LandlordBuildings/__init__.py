@@ -13,8 +13,4 @@ class LandlordBuildings(LandlordBuildingsTemplate):
 
     self.address.text = self.item['Address']
     self.numberofrentalunits.text = self.item['NumberOfRentalUnits']
-
-  def copylink_click(self, **event_args):
-    navigator.clipboard.writeText("https://no-on-a.anvil.app/#?l=" + self.item['Owner1'])
-
-
+    self.viewunits.url = "https://no-on-a.anvil.app/#?a=" + self.item['Address']

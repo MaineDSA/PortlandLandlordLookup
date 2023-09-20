@@ -20,16 +20,16 @@ components:
     name: numberofrentalunits
     layout_properties: {slot: NumberOfRentalUnits}
 - type: Spacer
-  properties: {visible: true, spacing_above: small, spacing_below: small, height: '45',
+  properties: {visible: true, spacing_above: small, spacing_below: small, height: '50',
     tooltip: ''}
   name: spacer_1
-  layout_properties: {grid_position: 'ZYKDJN,USSNIS QBRDQW,PVAWNW'}
-- type: Button
-  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: Copy Link, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: 'fa:clipboard'}
-  name: copylink
-  layout_properties: {grid_position: 'ZYKDJN,USSNIS YRVEQA,ACSLWO'}
-  event_bindings: {click: copylink_click}
+  layout_properties: {grid_position: 'ZYKDJN,USSNIS HCULJF,VYGFHO'}
+- type: Link
+  properties: {role: null, url: '', align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: View Units, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
+    spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+    italic: false, background: '', bold: false, underline: false, icon: 'fa:building-o'}
+  name: viewunits
+  layout_properties: {grid_position: 'ZYKDJN,USSNIS NUUJTG,BDPJHN'}
+  event_bindings: {}
 is_package: true

@@ -4,6 +4,7 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from anvil.js.window import navigator
 
 class LandlordLookup(LandlordLookupTemplate):
   def __init__(self, **properties):
@@ -36,3 +37,6 @@ class LandlordLookup(LandlordLookupTemplate):
 
   def textbox_pressed_enter(self, **event_args):
     self.query_lookup()
+
+  def copylink_click(self, **event_args):
+    navigator.clipboard.writeText("https://no-on-a.anvil.app/#?l=" + self.textbox_landlord.text)
