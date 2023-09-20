@@ -59,7 +59,7 @@ components:
     foreground: '', visible: false, font_size: null, content: '## Retrieved Information',
     font: '', spacing_above: small, spacing_below: small, data: null, background: '',
     format: markdown}
-  name: text_info_header
+  name: retrievedinfo
   layout_properties:
     col_widths: {}
     grid_position: ZBXBMR,VXDIDK

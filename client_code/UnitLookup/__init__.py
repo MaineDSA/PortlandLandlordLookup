@@ -25,7 +25,7 @@ class UnitLookup(UnitLookupTemplate):
 
     found_units = anvil.server.call('find_by_address', address=self.textbox_address.text, unit=self.textbox_address_unit.text)
     if not found_units:
-      self.retrievedinfo.visible = True
+      self.retrievedinfo.visible = False
       self.tenantcontact.visible = False
       return False
     self.units.items = found_units
