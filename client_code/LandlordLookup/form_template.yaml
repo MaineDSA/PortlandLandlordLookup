@@ -56,7 +56,7 @@ components:
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: true, text: Check My Unit, font_size: null, font: '',
       spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
+      background: '', bold: false, underline: false, icon: 'fa:search'}
     name: submit
     layout_properties: {grid_position: 'YMIMCE,HBTFYF'}
     event_bindings: {click: submit_click}
@@ -66,11 +66,60 @@ components:
       font: '', spacing_above: small, spacing_below: small, data: null, background: '',
       format: markdown}
     name: text_info_header
-    layout_properties: {grid_position: 'BFXNJP,QWCRKO'}
+    layout_properties: {grid_position: 'BFXNJP,BJXWTP'}
   - type: RepeatingPanel
     properties: {item_template: LandlordLookup.UnitListings}
     name: units
     layout_properties: {grid_position: 'MEAYDP,HCTAFL'}
+  - type: RichText
+    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+      foreground: '', visible: false, font_size: null, content: '## Contact Us
+
+        Want to learn more and help keep Portland tenants safe? Leave your name and
+        email here!', font: '', spacing_above: small, spacing_below: small, data: null,
+      background: '', format: markdown}
+    name: textcontacttitle
+    layout_properties: {grid_position: 'YUJQZP,WMQFGH'}
+    components: []
+  - type: TextBox
+    properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: First Name,
+      border: '', enabled: true, foreground: '', visible: false, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: tenantname_first
+    layout_properties: {grid_position: 'QVQCMX,NWETLS'}
+  - type: TextBox
+    properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: Last Name,
+      border: '', enabled: true, foreground: '', visible: false, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: tenantname_last
+    layout_properties: {grid_position: 'QVQCMX,YDIRHO'}
+    event_bindings: {pressed_enter: outlined_1_pressed_enter}
+  - type: TextBox
+    properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: Email Address,
+      border: '', enabled: true, foreground: '', visible: false, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: tenantemail
+    layout_properties: {grid_position: 'QVQCMX,EFJUPL'}
+    event_bindings: {pressed_enter: outlined_1_pressed_enter}
+  - type: TextArea
+    properties: {role: null, align: left, height: '', tooltip: '', placeholder: 'Do
+        you have a story to share? A comment for us?', border: '', enabled: true,
+      foreground: '', visible: false, text: '', font_size: null, auto_expand: false,
+      font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+      bold: false, underline: false}
+    name: tenantstory
+    layout_properties: {grid_position: 'UITVEY,ALJKZI'}
+  - type: Button
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: false, text: Send, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: 'fa:paper-plane-o'}
+    name: tenantinfo_submit
+    layout_properties: {grid_position: 'TXYHJB,JXBIKR'}
+    event_bindings: {click: outlined_button_1_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links

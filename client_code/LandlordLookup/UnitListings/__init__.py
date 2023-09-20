@@ -10,11 +10,12 @@ class UnitListings(UnitListingsTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
+    self.unittitle.text = self.item['Address'] + ', ' + self.item['unitNumber1']
     self.unitnumber.text = self.item['unitNumber1']
     self.unitaddress.text = self.item['Address']
     self.unitbedrooms.text = self.item['nbrBedRms1']
     self.unitcurrentrent.text = self.item['CurrentRent1']
-    if self.item['Likely to Exempt']:
+    if self.item['Likely to Exempt'] == True:
       self.unitislikely.text = 'is likely to'
     else:
       self.unitislikely.text = 'may not'
