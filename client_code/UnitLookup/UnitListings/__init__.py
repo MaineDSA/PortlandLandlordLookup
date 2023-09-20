@@ -30,8 +30,8 @@ class UnitListings(UnitListingsTemplate):
     self.currentrent.text = currentrent
 
     unitowner = 'The landlord is listed as '
-    unitowner += self.item['Owner 1']
-    unitowner += self.item['Owner 2']
+    unitowner += self.item['Owner1']
+    unitowner += self.item['Owner2']
     unitowner += ' of '
     unitowner += self.item['Owner City']
     unitowner += ', '

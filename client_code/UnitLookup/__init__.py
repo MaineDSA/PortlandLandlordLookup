@@ -45,4 +45,7 @@ class UnitLookup(UnitLookupTemplate):
     )
     if saved_message:
       self.messagesubmitted.visible = True
-      self.tenantcontact.visible = False      
+      self.tenantcontact.visible = False
+
+  def lookuplandlord_click(self, **event_args):
+    open_form('LandlordLookup')

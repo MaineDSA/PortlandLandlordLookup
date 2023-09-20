@@ -32,3 +32,6 @@ class LandlordLookup(LandlordLookupTemplate):
 
   def textbox_landlord_pressed_enter(self, **event_args):
     self.query_lookup()
+
+  def lookupunits_click(self, **event_args):
+    open_form('UnitLookup')
