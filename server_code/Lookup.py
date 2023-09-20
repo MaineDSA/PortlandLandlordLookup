@@ -27,10 +27,6 @@ def find_units(**kwargs):
     ))
   print("Found " + str(len(unit_matches)) + " unit matches.")
 
-
-  print('b', type(building_units))
-  print('u', type(unit_matches))
-  
   # If there are specific unit matches, show them
   # If not, show the building matches
   if len(unit_matches) > 0:
