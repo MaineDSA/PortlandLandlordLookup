@@ -19,12 +19,17 @@ components:
     properties: {}
     name: numberofrentalunits
     layout_properties: {slot: NumberOfRentalUnits}
+- type: Spacer
+  properties: {visible: true, spacing_above: small, spacing_below: small, height: '45',
+    tooltip: ''}
+  name: spacer_1
+  layout_properties: {grid_position: 'ZYKDJN,USSNIS QBRDQW,PVAWNW'}
 - type: Button
   properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Copy Link, font_size: null, font: '', spacing_above: small,
     icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
     underline: false, icon: 'fa:clipboard'}
   name: copylink
-  layout_properties: {grid_position: 'ZYKDJN,USSNIS'}
+  layout_properties: {grid_position: 'ZYKDJN,USSNIS YRVEQA,ACSLWO'}
   event_bindings: {click: copylink_click}
 is_package: true
