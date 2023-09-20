@@ -16,7 +16,8 @@ class LandlordLookup(LandlordLookupTemplate):
       Notification("No street address entered.")
       return False
 
-    self.units.items = anvil.server.call('find_units', address=self.textbox_address.text, unit=self.textbox_address_unit.text)
+    found_units = anvil.server.call('find_units', address=self.textbox_address.text, unit=self.textbox_address_unit.text)
+    self.units.items = found_units
     Notification('Found ' + str(len(self.units.items)) + 'matching units.')
 
     if len(self.units.items) > 0:
