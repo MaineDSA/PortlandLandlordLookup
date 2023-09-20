@@ -25,11 +25,13 @@ class LandlordLookup(LandlordLookupTemplate):
     found_buildings = anvil.server.call('find_by_landlord', landlord=self.textbox_landlord.text)
     if not found_buildings:
       self.retrievedinfo.visible = False
+      self.copylink.visible = False
       return False
 
     self.buildings.items = found_buildings
     if self.buildings.items:
       self.retrievedinfo.visible = True
+      self.copylink.visible = True
 
   # Triggering when button is clicked
   def search_click(self, **event_args):

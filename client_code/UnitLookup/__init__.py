@@ -28,6 +28,7 @@ class UnitLookup(UnitLookupTemplate):
     if not found_units:
       self.retrievedinfo.visible = False
       self.tenantcontact.visible = False
+      self.copylink.visible = False
       return False
     self.units.items = found_units
     Notification('Found ' + str(len(self.units.items)) + 'matching units.')
@@ -35,6 +36,7 @@ class UnitLookup(UnitLookupTemplate):
     if len(self.units.items) > 0:
       self.retrievedinfo.visible = True
       self.tenantcontact.visible = True
+      self.copylink.visible = True
 
   # Triggering when button is clicked
   def submit_click(self, **event_args):
