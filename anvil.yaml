@@ -13,6 +13,10 @@ metadata: {title: Question A Rent Control Checker - No on A!, description: 'Elec
     Day: November 7, 2023 | Maine DSA urges you to Vote No On A | If passed, Question
     A will kick thousands of tenants off of rent control.', logo_img: 'https://www.mainedsa.org/wp-content/uploads/2023/07/Maine-DSA-Moose-with-Rose-Logo.svg'}
 startup_form: null
+native_deps: {head_html: '<link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet">'}
 db_schema:
   units:
     client: none
