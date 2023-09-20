@@ -11,10 +11,10 @@ class LandlordBuildings(LandlordBuildingsTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    self.address.text = 'test'
-    self.numberofrentalunits.text = 0
+    self.address.text = self.item['Address']
+    self.numberofrentalunits.text = self.item['NumberOfRentalUnits']
 
   def copylink_click(self, **event_args):
-    navigator.clipboard.writeText("Hello World!")
+    navigator.clipboard.writeText("https://no-on-a.anvil.app/#?l=" + self.item['Owner1'])
 
 

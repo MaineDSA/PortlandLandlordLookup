@@ -1,3 +1,4 @@
+from anvil import *
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
@@ -14,16 +15,6 @@ def find_by_address(**kwargs):
       Address=q.ilike(f'%{address}%'),
     )
   print("Found " + str(len(building_units)) + " building matches.")
-
-  landlord_addresses = {}
-  
-  for unit in building_units:
-    landlord_addresses[unit['Address']] = unit
-
-  # Give up if no units found at address
-  print("Found " + str(len(landlord_addresses)) + " addresses associated with this entity.")
-  if len(landlord_addresses) == 0:
-    return False
   
   # Find all units that match the unit AND the address
   unit_matches = app_tables.units.search(q.all_of(

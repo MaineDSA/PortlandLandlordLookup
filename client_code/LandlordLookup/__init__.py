@@ -18,23 +18,16 @@ class LandlordLookup(LandlordLookupTemplate):
   def query_lookup(self):
     # Give up if no address is supplied
     if not self.textbox_landlord.text:
-      Notification("No landlord name entered.")
+      alert("No landlord name entered.")
       return False
 
     found_buildings = anvil.server.call('find_by_landlord', landlord=self.textbox_landlord.text)
     if not found_buildings:
       self.retrievedinfo.visible = False
       return False
-    Notification('Found ' + str(len(found_buildings)) + 'matching units.')
 
-    landlord_addresses = {}
-    for unit in found_buildings:
-      landlord_addresses[unit["Address"]] = unit
-    
-    Notification('Found ' + str(len(self.buildings.items)) + 'addresses listed.')
-    self.buildings.items = landlord_addresses
-
-    if len(self.buildings.items) > 0:
+    self.buildings.items = found_buildings
+    if self.buildings.items:
       self.retrievedinfo.visible = True
 
   # Triggering when button is clicked

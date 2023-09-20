@@ -20,7 +20,7 @@ class UnitLookup(UnitLookupTemplate):
   def query_lookup(self):
     # Give up if no address is supplied
     if not self.textbox_address.text:
-      Notification("No street address entered.")
+      alert("No street address entered.")
       return False
 
     found_units = anvil.server.call('find_by_address', address=self.textbox_address.text, unit=self.textbox_address_unit.text)

@@ -158,3 +158,4 @@ components:
     layout_properties: {grid_position: 'HCXNSG,OVZLTY'}
     event_bindings: {click: tenantinfo_submit_click}
 is_package: true
+custom_component: true

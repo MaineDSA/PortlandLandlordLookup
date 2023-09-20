@@ -1,3 +1,4 @@
+from anvil import *
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
@@ -11,13 +12,18 @@ def find_by_landlord(**kwargs):
   units = app_tables.units.search(q.any_of(
       #tables.order_by('unitNumber1'),
       Owner1=q.ilike(f'%{landlord}%'),
+      Owner2=q.ilike(f'%{landlord}%'),
     ))
   print("Found " + str(len(units)) + " units.")
 
-  # Give up if no units found at address 
-  if len(units) == 0:
-    return False
+  landlord_addresses = {}
+  for unit in units:
+    landlord_addresses[unit["Address"]] = unit
+    
+  print('Found ' + str(len(landlord_addresses)) + 'addresses listed.')
 
-  print(units)
+  # Give up if no units found at address 
+  if len(landlord_addresses) == 0:
+    return False
   
-  return units
+  return landlord_addresses
