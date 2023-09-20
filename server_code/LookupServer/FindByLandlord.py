@@ -7,7 +7,7 @@ import anvil.server
 def find_by_landlord(**kwargs):
   landlord = kwargs.get('landlord', None)
   
-  # Find all units that match the address
+  # Find all units that match the landlord name
   units = app_tables.units.search(
       q.any_of(
         Owner1=q.ilike(f'%{landlord}%'),
