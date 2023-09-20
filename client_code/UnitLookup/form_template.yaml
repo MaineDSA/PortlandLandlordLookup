@@ -1,178 +1,155 @@
-is_package: true
 container:
-  type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
+  type: ColumnPanel
+  properties: {col_widths: '{"KSPEXP":25,"EZVARN":20,"TLPGBC":15}'}
 components:
+- type: RichText
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+    foreground: '', visible: true, font_size: null, content: '# Vote No on A.
+
+      Portland landlords have once again brought a ballot initiative to break rent
+      control to Portland voters. This time, their goal is to exempt thousands of
+      currently-protected units from rent control in Portland. If passed, the initiative
+      would allow any landlord with fewer than 10 units to charge whatever they want
+      instead of the <2% currently allowed for 2024. Vote No on A on November 7 to
+      protect rent control.', font: '', spacing_above: small, spacing_below: small,
+    data: null, background: '', format: markdown}
+  name: text_intro
+  layout_properties:
+    col_widths: {}
+    grid_position: AQDMRN,BEQCIP
+  components: []
+- type: RichText
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+    foreground: '', visible: true, font_size: null, content: '## Where do you live?
+
+      We use this information to check whether you''re likely to be kicked off of
+      rent control if Question A passes.', font: '', spacing_above: small, spacing_below: small,
+    data: null, background: '', format: markdown}
+  name: text_ask
+  layout_properties:
+    col_widths: {}
+    grid_position: FNWDHB,ZEMSQP
+- type: TextBox
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Street Address (eg 565 Congress St),
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: textbox_address
+  layout_properties:
+    col_widths: {}
+    grid_position: AINEOB,KSPEXP
+- type: TextBox
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: 'Unit
+      Number (eg 3, 100-2, A, 3C)', border: '', enabled: true, foreground: '', visible: true,
+    text: '', font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+    italic: false, background: '', bold: false, underline: false}
+  name: textbox_address_unit
+  layout_properties:
+    col_widths: {}
+    grid_position: AINEOB,EZVARN
+- type: Button
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Check My Unit, font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false, icon: 'fa:search'}
+  name: submit
+  layout_properties:
+    col_widths: {}
+    grid_position: AINEOB,TLPGBC
 - type: ColumnPanel
   properties: {col_widths: '{}'}
-  name: content_panel
-  layout_properties: {slot: default}
+  name: retrievedinfo
+  layout_properties: {grid_position: 'DIKMRQ,YZAYRO'}
   components:
   - type: RichText
     properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-      foreground: '', visible: true, font_size: null, content: '# Vote No on A.
-
-        Portland landlords have once again brought a ballot initiative to break rent
-        control to Portland voters. This time, their goal is to exempt thousands of
-        currently-protected units from rent control in Portland. If passed, the initiative
-        would allow any landlord with fewer than 10 units to charge whatever they
-        want instead of the <2% currently allowed for 2024. Vote No on A on November
-        7 to protect rent control.', font: '', spacing_above: small, spacing_below: small,
-      data: null, background: '', format: markdown}
-    name: text_intro
-    layout_properties: {grid_position: 'VLXVPG,PHPCAX'}
-    components: []
-  - type: RichText
-    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-      foreground: '', visible: true, font_size: null, content: '## Where do you live?
-
-        We use this information to check whether you''re likely to be kicked off of
-        rent control if Question A passes.', font: '', spacing_above: small, spacing_below: small,
-      data: null, background: '', format: markdown}
-    name: text_ask
-    layout_properties: {grid_position: 'UQMQFM,LBJDUR'}
-  - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Street Address (eg 565 Congress St),
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false}
-    name: textbox_address
-    layout_properties: {grid_position: 'YMIMCE,UMCBIT'}
-    event_bindings: {pressed_enter: textbox_pressed_enter}
-  - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: 'Unit
-        Number (eg 3, 100-2, A, 3C)', border: '', enabled: true, foreground: '', visible: true,
-      text: '', font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
-      italic: false, background: '', bold: false, underline: false}
-    name: textbox_address_unit
-    layout_properties: {grid_position: 'YMIMCE,KOPNTC'}
-    event_bindings: {pressed_enter: textbox_pressed_enter}
-  - type: Button
-    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Check My Unit, font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: 'fa:search'}
-    name: submit
-    layout_properties: {grid_position: 'YMIMCE,HBTFYF'}
-    event_bindings: {click: submit_click}
-  - type: RichText
-    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-      foreground: '', visible: false, font_size: null, content: '## Retrieved Information',
+      foreground: '', visible: true, font_size: null, content: '## Retrieved Information',
       font: '', spacing_above: small, spacing_below: small, data: null, background: '',
       format: markdown}
     name: text_info_header
-    layout_properties: {grid_position: 'BFXNJP,BJXWTP'}
-  - type: RepeatingPanel
-    properties: {item_template: UnitLookup.BuildingUnits}
-    name: units
-    layout_properties: {grid_position: 'MEAYDP,HCTAFL'}
-  - type: ColumnPanel
-    properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
-      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-      spacing_below: small, background: ''}
-    name: messagesubmitted
-    layout_properties: {grid_position: 'RIRBTK,VHFGEC'}
+    layout_properties:
+      col_widths: {}
+      grid_position: VWVKYU,HODGDF
     components:
-    - type: RichText
-      properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-        foreground: '', visible: true, font_size: null, content: '##  Contact Us
-
-          Your message has been submitted.', font: '', spacing_above: small, spacing_below: small,
-        data: null, background: '', format: markdown}
-      name: textmessagesubmitted
-      layout_properties: {grid_position: 'LOERWQ,KFEWJO'}
-  - type: ColumnPanel
-    properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
-      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-      spacing_below: small, background: ''}
-    name: tenantcontact
-    layout_properties: {grid_position: 'PJJWVM,ZHLNMQ'}
-    components:
-    - type: RichText
-      properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-        foreground: '', visible: true, font_size: null, content: '## Contact Us
-
-          Want to learn more and help keep Portland tenants safe? Leave your name
-          and email here!', font: '', spacing_above: small, spacing_below: small,
-        data: null, background: '', format: markdown}
-      name: textcontacttitle
-      layout_properties: {grid_position: 'KYQKDC,DZBBWK'}
-      components: []
-    - type: TextBox
-      properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: First Name,
-        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-        background: '', bold: false, underline: false}
-      name: tenantname_first
-      layout_properties: {grid_position: 'JBJNVS,TBQOFW'}
-    - type: TextBox
-      properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: Last Name,
-        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-        background: '', bold: false, underline: false}
-      name: tenantname_last
-      layout_properties: {grid_position: 'JBJNVS,MHSCBY'}
-      event_bindings: {}
-    - type: TextBox
-      properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: Email Address,
-        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-        background: '', bold: false, underline: false}
-      name: tenantemail
-      layout_properties: {grid_position: 'JBJNVS,GXIUSJ'}
-      event_bindings: {}
-    - type: TextArea
-      properties: {role: null, align: left, height: '', tooltip: '', placeholder: 'Do
-          you have a story to share? A comment for us?', border: '', enabled: true,
-        foreground: '', visible: true, text: '', font_size: null, auto_expand: false,
-        font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
-        bold: false, underline: false}
-      name: tenantstory
-      layout_properties: {grid_position: 'YVAZBP,CDQISR'}
-    - type: Button
-      properties: {role: outlined-button, align: center, tooltip: '', border: '',
-        enabled: true, foreground: '', visible: true, text: Send, font_size: null,
-        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-        background: '', bold: false, underline: false, icon: 'fa:paper-plane-o'}
-      name: tenantinfo_submit
-      layout_properties: {grid_position: 'HCXNSG,OVZLTY'}
-      event_bindings: {click: tenantinfo_submit_click}
-  - type: RichText
-    properties: {role: null, align: right, tooltip: '', enable_slots: true, border: '',
-      foreground: '', visible: true, font_size: null, content: 'Made with ❤️ by [Maine
-        Democratic Socialists of America](https://www.mainedsa.org/) in Portland,
-        ME.', font: '', spacing_above: small, spacing_below: small, data: null, background: '',
-      format: markdown}
-    name: rich_text_1
-    layout_properties: {grid_position: 'VEXFPA,DXFRKK'}
-- type: FlowPanel
-  properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
-    foreground: '', visible: true, spacing_above: small, spacing_below: large, background: ''}
-  name: navbar_links
-  layout_properties: {slot: nav-right}
+    - type: RepeatingPanel
+      properties: {item_template: UnitLookup.BuildingUnits}
+      name: units
+      layout_properties:
+        col_widths: {}
+        grid_position: NYXYQD,GFAQOJ
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
+  name: messagesubmitted
+  layout_properties:
+    col_widths: {}
+    grid_position: GVCBWN,DQOGCB
   components:
-  - type: Link
-    properties: {role: null, url: 'https://www.mainedsa.org/maine-dsa-campaigns-and-projects/vote-no-on-a?refcode=landlord-lookup',
-      align: left, tooltip: '', border: thin solid, foreground: 'theme:On Primary',
-      visible: true, text: No on A, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
-      spacing_above: none, icon_align: left, col_widths: '', spacing_below: medium,
-      italic: false, background: '', bold: false, underline: false, icon: 'fa:thumbs-o-down'}
-    name: no_on_a
-    layout_properties: {}
-  - type: Link
-    properties: {role: null, url: 'https://secure.actblue.com/donate/mdsa-campaign-for-a-livable-portland-1?refcode=landlord-lookup',
-      align: left, tooltip: '', border: thin solid, foreground: 'theme:On Primary',
-      visible: true, text: Donate, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
-      spacing_above: none, icon_align: left, col_widths: '', spacing_below: medium,
-      italic: false, background: '', bold: false, underline: false, icon: 'fa:money'}
-    name: actblue
-    layout_properties: {}
-- type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:On
-      Primary', visible: true, text: No on A! Protect Rent Control!, font_size: null,
-    font: Calistoga, spacing_above: small, icon_align: left, spacing_below: small,
-    italic: false, background: '', bold: true, underline: false, icon: ''}
-  name: heading_page
-  layout_properties: {slot: title}
-custom_component: true
-properties: []
+  - type: RichText
+    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+      foreground: '', visible: true, font_size: null, content: '##  Contact Us
+
+        Your message has been submitted.', font: '', spacing_above: small, spacing_below: small,
+      data: null, background: '', format: markdown}
+    name: textmessagesubmitted
+    layout_properties: {grid_position: 'LOERWQ,KFEWJO'}
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
+  name: tenantcontact
+  layout_properties:
+    col_widths: {}
+    grid_position: AEHTEF,TNDMQS
+  components:
+  - type: RichText
+    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+      foreground: '', visible: true, font_size: null, content: '## Contact Us
+
+        Want to learn more and help keep Portland tenants safe? Leave your name and
+        email here!', font: '', spacing_above: small, spacing_below: small, data: null,
+      background: '', format: markdown}
+    name: textcontacttitle
+    layout_properties: {grid_position: 'KYQKDC,DZBBWK'}
+    components: []
+  - type: TextBox
+    properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: First Name,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: tenantname_first
+    layout_properties: {grid_position: 'JBJNVS,TBQOFW'}
+  - type: TextBox
+    properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: Last Name,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: tenantname_last
+    layout_properties: {grid_position: 'JBJNVS,MHSCBY'}
+    event_bindings: {}
+  - type: TextBox
+    properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: Email Address,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: tenantemail
+    layout_properties: {grid_position: 'JBJNVS,GXIUSJ'}
+    event_bindings: {}
+  - type: TextArea
+    properties: {role: null, align: left, height: '', tooltip: '', placeholder: 'Do
+        you have a story to share? A comment for us?', border: '', enabled: true,
+      foreground: '', visible: true, text: '', font_size: null, auto_expand: false,
+      font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+      bold: false, underline: false}
+    name: tenantstory
+    layout_properties: {grid_position: 'YVAZBP,CDQISR'}
+  - type: Button
+    properties: {role: outlined-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Send, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: 'fa:paper-plane-o'}
+    name: tenantinfo_submit
+    layout_properties: {grid_position: 'HCXNSG,OVZLTY'}
+    event_bindings: {click: tenantinfo_submit_click}
+is_package: true
