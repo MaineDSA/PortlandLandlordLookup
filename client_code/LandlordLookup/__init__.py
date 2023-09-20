@@ -18,6 +18,9 @@ class LandlordLookup(LandlordLookupTemplate):
 
     self.units.items = anvil.server.call('find_units', address=self.textbox_address.text, unit=self.textbox_address_unit.text)
     Notification('Found ' + str(len(self.units.items)) + 'matching units.')
+
+    if len(self.units.items) > 0:
+      self.tenantcontact.visible = True
   
   # Triggering when button is clicked
   def submit_click(self, **event_args):
