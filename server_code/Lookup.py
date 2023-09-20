@@ -26,12 +26,14 @@ def find_units(**kwargs):
       unitNumber1=q.ilike(f'%{unit}%'),
     ))
   print("Found " + str(len(unit_matches)) + " unit matches.")
+
+
+  print('b', type(building_units))
+  print('u', type(unit_matches))
   
   # If there are specific unit matches, show them
   # If not, show the building matches
-  if (type(unit_matches) == anvil.tables.v2._search.SearchIterator) & (len(unit_matches) > 0):
+  if len(unit_matches) > 0:
     return unit_matches
-  elif (type(unit_matches) == anvil.tables.v2._search.SearchIterator):
-    return building_units
   else:
-    return False
+    return building_units
