@@ -28,4 +28,3 @@ class LandlordLookup(LandlordLookupTemplate):
 
   def textbox_address_unit_pressed_enter(self, **event_args):
     self.query_lookup()
-
