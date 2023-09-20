@@ -4,7 +4,7 @@ container:
 components:
 - type: RichText
   properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-    foreground: '', visible: true, font_size: null, content: '### Matching Unit
+    foreground: '', visible: true, font_size: null, content: '### {Matching Unit}
 
       Unit {unitNumber1} at {Address} {Likely} be kicked off of rent control if Question
       A passes.
@@ -56,4 +56,8 @@ components:
     properties: {}
     name: unitnumber
     layout_properties: {slot: unitNumber1}
+  - type: Label
+    properties: {}
+    name: unittitle
+    layout_properties: {slot: Matching Unit}
 is_package: true

@@ -66,11 +66,20 @@ components:
       font: '', spacing_above: small, spacing_below: small, data: null, background: '',
       format: markdown}
     name: text_info_header
-    layout_properties: {grid_position: 'BFXNJP,QWCRKO'}
+    layout_properties: {grid_position: 'BFXNJP,BJXWTP'}
   - type: RepeatingPanel
     properties: {item_template: LandlordLookup.UnitListings}
     name: units
     layout_properties: {grid_position: 'MEAYDP,HCTAFL'}
+  - type: RichText
+    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+      foreground: '', visible: true, font_size: null, content: '## Contact Us
+
+        Want to learn more and help keep Portland tenants safe? Leave your name and
+        email here!', font: '', spacing_above: small, spacing_below: small, data: null,
+      background: '', format: markdown}
+    name: textcontacttitle
+    layout_properties: {grid_position: 'YUJQZP,WMQFGH'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
