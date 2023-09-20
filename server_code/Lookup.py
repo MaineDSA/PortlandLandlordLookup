@@ -33,7 +33,7 @@ def find_units(**kwargs):
   
   # If there are specific unit matches, show them
   # If not, show the building matches
-  if len(unit_matches) > 0:
+  if (type(unit_matches) == anvil.tables.v2._search.SearchIterator) & (len(unit_matches) > 0):
     return unit_matches
   else:
     return building_units
