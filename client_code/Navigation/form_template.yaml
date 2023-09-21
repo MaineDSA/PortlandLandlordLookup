@@ -63,7 +63,7 @@ components:
 - type: RichText
   properties: {role: null, align: right, tooltip: '', enable_slots: true, border: '',
     foreground: '', visible: true, font_size: null, content: 'Made with ❤️ by [Maine
-      Democratic Socialists of America](https://www.mainedsa.org/) in Portland, ME.',
+      DSA Campaign for a Livable Portland](https://www.mainedsa.org/maine-dsa-campaigns-and-projects/vote-no-on-a?refcode=landlord-lookup).',
     font: '', spacing_above: small, spacing_below: small, data: null, background: '',
     format: markdown}
   name: rich_text_1
