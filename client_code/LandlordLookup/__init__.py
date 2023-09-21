@@ -19,19 +19,23 @@ class LandlordLookup(LandlordLookupTemplate):
   def query_lookup(self):
     # Give up if no address is supplied
     if not self.textbox_landlord.text:
-      alert("No landlord name entered.")
+      n = Notification()("No landlord name entered.")
+      n.show()
       return False
 
     found_buildings = anvil.server.call('find_by_landlord', landlord=self.textbox_landlord.text)
     if not found_buildings:
-      self.retrievedinfo.visible = False
-      self.copylink.visible = False
       return False
-
     self.buildings.items = found_buildings
+    n = Notification('Found ' + str(len(self.buildings.items)) + ' matching buildings.')
+    n.show()
+
     if self.buildings.items:
       self.retrievedinfo.visible = True
       self.copylink.visible = True
+    else:
+      self.retrievedinfo.visible = False
+      self.copylink.visible = False
 
   # Triggering when button is clicked
   def search_click(self, **event_args):
@@ -41,4 +45,7 @@ class LandlordLookup(LandlordLookupTemplate):
     self.query_lookup()
 
   def copylink_click(self, **event_args):
-    navigator.clipboard.writeText("https://no-on-a.anvil.app/#?l=" + self.textbox_landlord.text)
+    link = "https://no-on-a.anvil.app/#?l=" + self.textbox_landlord.text
+    navigator.clipboard.writeText(link)
+    n = Notification(content="Copied " + link + " to clipboard.", large=False)
+    n.show()

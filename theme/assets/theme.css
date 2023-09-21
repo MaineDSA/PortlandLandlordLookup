@@ -8,6 +8,10 @@
   margin-bottom: -10px;
 }
 
+body>div[data-notify="container"].alert-info {
+  background-color: #ffffff;
+}
+
 .content > .placeholder {
   margin: 16px;
   color: #888;

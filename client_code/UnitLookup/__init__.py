@@ -21,22 +21,25 @@ class UnitLookup(UnitLookupTemplate):
   def query_lookup(self):
     # Give up if no address is supplied
     if not self.textbox_address.text:
-      alert("No street address entered.")
+      n = Notification()("No street address entered.")
+      n.show()
       return False
 
     found_units = anvil.server.call('find_by_address', address=self.textbox_address.text, unit=self.textbox_address_unit.text)
     if not found_units:
-      self.retrievedinfo.visible = False
-      self.tenantcontact.visible = False
-      self.copylink.visible = False
       return False
     self.units.items = found_units
-    Notification('Found ' + str(len(self.units.items)) + 'matching units.')
+    n = Notification('Found ' + str(len(self.units.items)) + ' matching units.')
+    n.show()
 
-    if len(self.units.items) > 0:
+    if self.units.items:
       self.retrievedinfo.visible = True
       self.tenantcontact.visible = True
       self.copylink.visible = True
+    else:
+      self.retrievedinfo.visible = False
+      self.tenantcontact.visible = False
+      self.copylink.visible = False
 
   # Triggering when button is clicked
   def submit_click(self, **event_args):
@@ -60,4 +63,7 @@ class UnitLookup(UnitLookupTemplate):
       self.tenantcontact.visible = False
 
   def copylink_click(self, **event_args):
-    navigator.clipboard.writeText("https://no-on-a.anvil.app/#?a=" + self.textbox_address.text + "&u=" + self.textbox_address_unit.text)
+    link = "https://no-on-a.anvil.app/#?a=" + self.textbox_address.text + "&u=" + self.textbox_address_unit.text
+    navigator.clipboard.writeText(link)
+    n = Notification(content="Copied " + link + " to clipboard.", large=False)
+    n.show()
