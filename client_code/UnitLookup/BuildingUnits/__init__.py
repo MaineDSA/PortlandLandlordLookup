@@ -27,7 +27,7 @@ class BuildingUnits(BuildingUnitsTemplate):
     if self.item['CurrentRent1'] == "":
       currentrent += '.'
     elif float(self.item['CurrentRent1']) == 0:
-      currentrent += ', as the landlord has not reported this appropriately or the Housing Safety Office has not entered it into their systems.'
+      currentrent += ', as the landlord has not reported this appropriately, the unit is exempt, or the Housing Safety Office has not entered it into their systems.'
     else:
       currentrent += '.'
     self.currentrent.text = currentrent
