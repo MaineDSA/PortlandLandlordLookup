@@ -16,6 +16,16 @@ def find_by_address(**kwargs):
     )
   print("Found " + str(len(building_units)) + " building matches.")
   
+  if len(building_units) == 0:
+    prev_address = ""
+    next_address = ""
+    # Find all units that match the address
+    building_units = app_tables.units.search(q.any_of(
+        #tables.order_by('unitNumber1'),
+        Address=q.ilike(f'%{address}%'),
+      ))
+    print("Found " + str(len(building_units)) + " building matches.")
+
   # Find all units that match the unit AND the address
   unit_matches = app_tables.units.search(q.all_of(
       #tables.order_by('unitNumber1'),
