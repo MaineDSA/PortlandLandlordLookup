@@ -3,6 +3,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+import re
 
 @anvil.server.callable
 def find_by_address(**kwargs):
@@ -17,14 +18,19 @@ def find_by_address(**kwargs):
   print("Found " + str(len(building_units)) + " building matches.")
   
   if len(building_units) == 0:
-    prev_address = ""
-    next_address = ""
-    # Find all units that match the address
-    building_units = app_tables.units.search(q.any_of(
-        #tables.order_by('unitNumber1'),
-        Address=q.ilike(f'%{address}%'),
-      ))
-    print("Found " + str(len(building_units)) + " building matches.")
+    address_parts = re.split('^(\d+)', address, 1)
+    if address_parts:
+      prev_address = str(int(address_parts[1]) - 2) + address_parts[2]
+      next_address = str(int(address_parts[1]) + 2) + address_parts[2]
+      # Find all units that match the address
+      building_units = app_tables.units.search(
+          #tables.order_by('unitNumber1'),
+          Address=q.any_of(
+              q.ilike(f'%{prev_address}%'),
+              q.ilike(f'%{next_address}%'),
+            )
+        )
+      print("Found " + str(len(building_units)) + " building matches.")
 
   # Find all units that match the unit AND the address
   unit_matches = app_tables.units.search(q.all_of(
