@@ -26,8 +26,11 @@ components:
       rent control if Question A passes.
 
 
-      If you don''t specify a unit, it''ll show the whole building.', font: '', spacing_above: small,
-    spacing_below: small, data: null, background: '', format: markdown}
+      If you don''t specify a unit, it''ll show the whole building. If no units are
+      found at the address you input, your search will also include the address +
+      2 and the address - 2 as some multi-unit buildings are assigned numbers this
+      way.', font: '', spacing_above: small, spacing_below: small, data: null, background: '',
+    format: markdown}
   name: text_ask
   layout_properties:
     col_widths: {}
