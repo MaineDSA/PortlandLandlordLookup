@@ -42,4 +42,3 @@ class BuildingUnits(BuildingUnitsTemplate):
     unitowner += '.'
     self.unitowner.text = unitowner
     self.unitowner.url = "https://no-on-a.anvil.app/#?l=" + self.item['Owner1']
-

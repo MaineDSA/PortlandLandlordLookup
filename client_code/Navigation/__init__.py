@@ -20,11 +20,11 @@ class Navigation(NavigationTemplate):
 
     url_query = get_url_hash()
     if not url_query or not ('l' in url_query):
-      self.content_panel.add_component(UnitLookup())
+      self.content_panel.add_component(self.unit_link.tag.form_to_open)
       self.unit_link.role = 'selected'
       # nav_link_click(self, sender=self.unit_link)
     else:
-      self.content_panel.add_component(LandlordLookup())
+      self.content_panel.add_component(self.landlord_link.tag.form_to_open)
       self.landlord_link.role = 'selected'
       # nav_link_click(self, sender=self.landlord_link)
 
