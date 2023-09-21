@@ -37,12 +37,6 @@ db_schema:
     - name: unitNumber1
       type: string
       admin_ui: {width: 200, order: 4}
-    - name: Owner 1
-      type: string
-      admin_ui: {width: 200, order: 8}
-    - name: Owner 2
-      type: string
-      admin_ui: {width: 200, order: 9}
     - name: Owner City
       type: string
       admin_ui: {width: 200, order: 10}
@@ -56,6 +50,8 @@ db_schema:
     - {name: BankedRent1, admin_ui: null, type: string}
     - {name: CurrentRent1, admin_ui: null, type: string}
     - {name: Ward, admin_ui: null, type: string}
+    - {name: Owner1, admin_ui: null, type: string}
+    - {name: Owner2, admin_ui: null, type: string}
     title: Units
   units_testing:
     title: Units-testing
@@ -86,12 +82,6 @@ db_schema:
     - name: nbrBedRms1
       admin_ui: {width: 200}
       type: number
-    - name: Owner 1
-      admin_ui: {width: 200}
-      type: string
-    - name: Owner 2
-      admin_ui: {width: 200}
-      type: string
     - name: Owner City
       admin_ui: {width: 200}
       type: string
@@ -101,10 +91,20 @@ db_schema:
     - name: Likely to Exempt
       admin_ui: {width: 200}
       type: bool
+    - name: Owner1
+      admin_ui: {width: 200}
+      type: string
+    - name: Owner2
+      admin_ui: {width: 200}
+      type: string
   messages:
     client: none
     server: full
-    columns: []
+    columns:
+    - {name: email, admin_ui: null, type: string}
+    - {name: firstname, admin_ui: null, type: string}
+    - {name: lastname, admin_ui: null, type: string}
+    - {name: story, admin_ui: null, type: string}
     title: Messages
 uplink_visible: true
 renamed: true

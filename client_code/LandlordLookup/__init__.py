@@ -47,5 +47,5 @@ class LandlordLookup(LandlordLookupTemplate):
   def copylink_click(self, **event_args):
     link = "https://no-on-a.anvil.app/#?l=" + self.textbox_landlord.text
     navigator.clipboard.writeText(link)
-    n = Notification(content="Copied " + link + " to clipboard.", large=False)
+    n = Notification(content="Copied " + link + " to clipboard.", title="Search Complete", large=False)
     n.show()

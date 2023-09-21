@@ -65,5 +65,5 @@ class UnitLookup(UnitLookupTemplate):
   def copylink_click(self, **event_args):
     link = "https://no-on-a.anvil.app/#?a=" + self.textbox_address.text + "&u=" + self.textbox_address_unit.text
     navigator.clipboard.writeText(link)
-    n = Notification(content="Copied " + link + " to clipboard.", large=False)
+    n = Notification(content="Copied " + link + " to clipboard.", title="Search Complete", large=False)
     n.show()
