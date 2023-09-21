@@ -18,11 +18,10 @@ def find_by_address(**kwargs):
   print("Found " + str(len(building_units)) + " building matches.")
   
   if len(building_units) == 0:
-    address_parts = re.split('^\d+', address, 1)
-    print(address_parts)
+    address_parts = re.split('^(\d+)', address, 1)
     if address_parts:
-      prev_address = str(int(address_parts[0]) - 2) + address_parts[1]
-      next_address = str(int(address_parts[0]) + 2) + address_parts[1]
+      prev_address = str(int(address_parts[1]) - 2) + address_parts[2]
+      next_address = str(int(address_parts[1]) + 2) + address_parts[2]
       # Find all units that match the address
       building_units = app_tables.units.search(
           #tables.order_by('unitNumber1'),
