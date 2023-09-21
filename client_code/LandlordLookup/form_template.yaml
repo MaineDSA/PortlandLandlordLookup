@@ -22,7 +22,7 @@ components:
   properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
     foreground: '', visible: true, font_size: null, content: '## "Who" is your landlord?
 
-      These, days landlords typically [hide their holdings](https://shelterforce.org/2022/08/23/when-landlords-hide-behind-llcs/)
+      These days landlords typically [hide their holdings](https://shelterforce.org/2022/08/23/when-landlords-hide-behind-llcs/)
       within Limited Liability Companies (LLCs) which come with many benefits (for
       the landlord) like hiding who actually owns your building!
 
