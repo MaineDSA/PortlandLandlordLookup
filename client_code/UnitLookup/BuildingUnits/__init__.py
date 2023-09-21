@@ -15,9 +15,9 @@ class BuildingUnits(BuildingUnitsTemplate):
 
     questiona = 'This unit '
     if self.item['Likely to Exempt'] == True:
-      questiona += 'is likely to be kicked off of rent control if Question A passes.'
+      questiona += '*is* likely to be kicked off of rent control if Question A passes.'
     else:
-      questiona += 'may not be kicked off of rent control if Question A passes.'
+      questiona += '*may not be* kicked off of rent control if Question A passes.'
       questiona += ' However, if the landlord changes the ownership structure this unit could easily suffer the same fate as the 4,300 other units we have identified as likely to lose protections.'
     self.questiona.text = questiona
 
