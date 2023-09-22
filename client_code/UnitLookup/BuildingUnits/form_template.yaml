@@ -39,7 +39,7 @@ components:
     layout_properties: {slot: unitOwner}
   data_bindings: []
 - type: Spacer
-  properties: {visible: true, spacing_above: small, spacing_below: small, height: '100',
+  properties: {visible: true, spacing_above: small, spacing_below: small, height: 125,
     tooltip: ''}
   name: spacer_1
   layout_properties: {grid_position: 'YKKWIZ,QIHOAH ZKAUZI,XVHFSJ'}
