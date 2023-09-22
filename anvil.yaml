@@ -21,38 +21,6 @@ native_deps: {head_html: '<link rel="preconnect" href="https://fonts.gstatic.com
     <link href="https://fonts.googleapis.com/css2?family=Calistoga:wght@400&display=swap"
     rel="stylesheet">'}
 db_schema:
-  units:
-    client: none
-    server: full
-    columns:
-    - name: 'Lic. #'
-      type: string
-      admin_ui: {width: 200, order: 1}
-    - name: Address
-      type: string
-      admin_ui: {width: 200, order: 2}
-    - name: NumberOfRentalUnits
-      type: number
-      admin_ui: {width: 200, order: 3}
-    - name: unitNumber1
-      type: string
-      admin_ui: {width: 200, order: 4}
-    - name: Owner City
-      type: string
-      admin_ui: {width: 200, order: 10}
-    - name: Owner State
-      type: string
-      admin_ui: {width: 200, order: 11}
-    - name: Likely to Exempt
-      type: bool
-      admin_ui: {width: 200, order: 12}
-    - {name: nbrBedRms1, admin_ui: null, type: string}
-    - {name: BankedRent1, admin_ui: null, type: string}
-    - {name: CurrentRent1, admin_ui: null, type: string}
-    - {name: Ward, admin_ui: null, type: string}
-    - {name: Owner1, admin_ui: null, type: string}
-    - {name: Owner2, admin_ui: null, type: string}
-    title: Units
   messages:
     client: none
     server: full
@@ -62,8 +30,8 @@ db_schema:
     - {name: lastname, admin_ui: null, type: string}
     - {name: story, admin_ui: null, type: string}
     title: Messages
-  units2:
-    title: Units2
+  units:
+    title: Units
     client: none
     server: full
     columns:
