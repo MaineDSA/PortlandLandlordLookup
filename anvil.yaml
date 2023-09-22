@@ -53,50 +53,6 @@ db_schema:
     - {name: Owner1, admin_ui: null, type: string}
     - {name: Owner2, admin_ui: null, type: string}
     title: Units
-  units_testing:
-    title: Units-testing
-    client: none
-    server: full
-    columns:
-    - name: Ward
-      admin_ui: {width: 200}
-      type: number
-    - name: 'Lic. #'
-      admin_ui: {width: 200}
-      type: string
-    - name: Address
-      admin_ui: {width: 200}
-      type: string
-    - name: NumberOfRentalUnits
-      admin_ui: {width: 200}
-      type: number
-    - name: unitNumber1
-      admin_ui: {width: 200}
-      type: string
-    - name: CurrentRent1
-      admin_ui: {width: 200}
-      type: number
-    - name: BankedRent1
-      admin_ui: {width: 200}
-      type: number
-    - name: nbrBedRms1
-      admin_ui: {width: 200}
-      type: number
-    - name: Owner City
-      admin_ui: {width: 200}
-      type: string
-    - name: Owner State
-      admin_ui: {width: 200}
-      type: string
-    - name: Likely to Exempt
-      admin_ui: {width: 200}
-      type: bool
-    - name: Owner1
-      admin_ui: {width: 200}
-      type: string
-    - name: Owner2
-      admin_ui: {width: 200}
-      type: string
   messages:
     client: none
     server: full
@@ -106,5 +62,31 @@ db_schema:
     - {name: lastname, admin_ui: null, type: string}
     - {name: story, admin_ui: null, type: string}
     title: Messages
+  units2:
+    title: Units2
+    client: none
+    server: full
+    columns:
+    - {name: Address, admin_ui: null, type: string}
+    - {name: BankedRent1, admin_ui: null, type: string}
+    - {name: BaseRent1, admin_ui: null, type: string}
+    - {name: unitNumber1, admin_ui: null, type: string}
+    - {name: nbrBedRms1, admin_ui: null, type: string}
+    - {name: Ward, admin_ui: null, type: string}
+    - {name: PreviousRent, admin_ui: null, type: string}
+    - {name: ParcelID, admin_ui: null, type: string}
+    - {name: Owner2, admin_ui: null, type: string}
+    - {name: Owner1, admin_ui: null, type: string}
+    - {name: Owner Zip, admin_ui: null, type: string}
+    - {name: Owner State, admin_ui: null, type: string}
+    - {name: Owner City, admin_ui: null, type: string}
+    - {name: Owner Address, admin_ui: null, type: string}
+    - {name: NumberOfRentalUnits, admin_ui: null, type: number}
+    - {name: Likely to Exempt, admin_ui: null, type: bool}
+    - {name: 'Lic. #', admin_ui: null, type: string}
+    - {name: Land Use Code, admin_ui: null, type: string}
+    - {name: Exmption, admin_ui: null, type: string}
+    - {name: CurrentRent1, admin_ui: null, type: string}
+    - {name: Class, admin_ui: null, type: string}
 uplink_visible: true
 renamed: true
