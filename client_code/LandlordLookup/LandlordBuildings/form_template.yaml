@@ -6,10 +6,11 @@ components:
   properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
     foreground: '', visible: true, font_size: null, content: '### {address}
 
-      This building is listed as containing {NumberOfRentalUnits} units. Its land
-      use code is "{LandUseCode}" and the landlord {LiveInLandlord} live in the building.',
-    font: '', spacing_above: small, spacing_below: small, data: null, background: '',
-    format: markdown}
+      This building is listed as containing {NumberOfRentalUnits} units.
+
+      Its land use code is "{LandUseCode}" and the landlord {LiveInLandlord} live
+      in the building.', font: '', spacing_above: small, spacing_below: small, data: null,
+    background: '', format: markdown}
   name: rich_text_1
   layout_properties: {grid_position: 'ZYKDJN,IBTTNF'}
   components:
