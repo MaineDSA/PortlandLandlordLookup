@@ -11,7 +11,7 @@ def find_by_address(**kwargs):
   unit = str(kwargs.get('unit', None))
   
   # Find all units that match the address
-  building_units = app_tables.units.search(
+  building_units = app_tables.units2.search(
       #tables.order_by('unitNumber1'),
       Address=q.ilike(f'%{address}%'),
     )
@@ -23,7 +23,7 @@ def find_by_address(**kwargs):
       prev_address = str(int(address_parts[1]) - 2) + address_parts[2]
       next_address = str(int(address_parts[1]) + 2) + address_parts[2]
       # Find all units that match the address
-      building_units = app_tables.units.search(
+      building_units = app_tables.units2.search(
           #tables.order_by('unitNumber1'),
           Address=q.any_of(
               q.ilike(f'%{prev_address}%'),
@@ -33,7 +33,7 @@ def find_by_address(**kwargs):
       print("Found " + str(len(building_units)) + " building matches.")
 
   # Find all units that match the unit AND the address
-  unit_matches = app_tables.units.search(q.all_of(
+  unit_matches = app_tables.units2.search(q.all_of(
       #tables.order_by('unitNumber1'),
       Address=q.ilike(f'%{address}%'),
       unitNumber1=q.ilike(f'%{unit}%'),
