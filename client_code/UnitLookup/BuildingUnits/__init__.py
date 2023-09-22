@@ -11,10 +11,14 @@ class BuildingUnits(BuildingUnitsTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
+    liveinlandlord = (self.item['Exmption'] == '2to4 unit building one of which landlord occupies')
+    
     self.unittitle.text = self.item['Address'] + ', ' + self.item['unitNumber1']
 
     questiona = 'This unit '
-    if self.item['Likely to Exempt'] == True:
+    if (liveinlandlord):
+      questiona += 'is already exempt as the landlord claims to live in the building.'
+    elif (self.item['Likely to Exempt'] == True):
       questiona += '**is** likely to be kicked off of rent control if Question A passes.'
     else:
       questiona += '**may not be** kicked off of rent control if Question A passes.'
@@ -23,22 +27,20 @@ class BuildingUnits(BuildingUnitsTemplate):
 
     currentrent = 'The official rent for this '
     currentrent += self.item['nbrBedRms1']
-    currentrent += '-bedroom unit as of November 2022 was $' + self.item['CurrentRent1']
-    if self.item['CurrentRent1'] == "":
-      currentrent += '.'
-    elif float(self.item['CurrentRent1']) == 0:
-      currentrent += ', as the landlord has not reported this appropriately, the unit is exempt, or the Housing Safety Office has not entered it into their systems.'
-    else:
-      currentrent += '.'
+    currentrent += '-bedroom unit as of November 2022 was $' + self.item['CurrentRent1'] + '.'
+    if (float(self.item['CurrentRent1']) == 0) or (float(self.item['nbrBedRms1']) == 0):
+      currentrent += ' Some reasons for the missing information could be: improper reporting, some types of exempt units, or data issues from the Housing Safety Office.'
     self.currentrent.text = currentrent
 
     unitowner = 'The landlord is listed as '
     unitowner += self.item['Owner1']
-    unitowner += self.item['Owner2']
+    if self.item['Owner2']:
+      unitowner += ' ' + self.item['Owner2']
     unitowner += ' of '
     unitowner += self.item['Owner City']
     unitowner += ', '
     unitowner += self.item['Owner State']
     unitowner += '.'
     self.unitowner.text = unitowner
-    self.unitowner.url = "https://no-on-a.anvil.app/#?l=" + self.item['Owner1']
+
+    self.viewlandlord.url = "https://no-on-a.anvil.app/#?l=" + self.item['Owner1']
