@@ -98,7 +98,9 @@ components:
     grid_position: DIKMRQ,UITXJZ VLYQUW,ILBPJU
   event_bindings: {click: copylink_click}
 - type: RepeatingPanel
-  properties: {item_template: UnitLookup.BuildingUnits}
+  properties: {role: null, tooltip: '', border: '', foreground: '', items: null, visible: true,
+    spacing_above: none, spacing_below: none, item_template: UnitLookup.BuildingUnits,
+    background: ''}
   name: units
   layout_properties:
     col_widths: {}
