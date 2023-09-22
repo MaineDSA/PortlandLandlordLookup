@@ -6,11 +6,13 @@ components:
   properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
     foreground: '', visible: true, font_size: null, content: '### {address}
 
-      This building is listed as containing {NumberOfRentalUnits} units.
+      This building is listed as containing {NumberOfRentalUnits} units and belongs
+      to {landlord}.
 
-      Its land use code is "{LandUseCode}" and the landlord {LiveInLandlord} live
-      in the building.', font: '', spacing_above: small, spacing_below: small, data: null,
-    background: '', format: markdown}
+      It''s registered under the class of "{UnitClass}" and its land use code is "{LandUseCode}."
+
+      The landlord {LiveInLandlord} live in the building.', font: '', spacing_above: small,
+    spacing_below: small, data: null, background: '', format: markdown}
   name: rich_text_1
   layout_properties: {grid_position: 'ZYKDJN,IBTTNF'}
   components:
@@ -30,6 +32,17 @@ components:
     properties: {}
     name: landuse
     layout_properties: {slot: LandUseCode}
+  - type: Label
+    properties: {}
+    name: unitclass
+    layout_properties: {slot: UnitClass}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: landlord
+    layout_properties: {slot: landlord}
 - type: Spacer
   properties: {visible: true, spacing_above: small, spacing_below: small, height: '50',
     tooltip: ''}

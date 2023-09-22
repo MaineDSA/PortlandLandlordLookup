@@ -12,8 +12,23 @@ class LandlordBuildings(LandlordBuildingsTemplate):
     self.init_components(**properties)
 
     self.address.text = self.item['Address']
+
     self.numberofrentalunits.text = self.item['NumberOfRentalUnits']
+
+    unitowner = 'The landlord is listed as '
+    unitowner += self.item['Owner1']
+    if self.item['Owner2']:
+      unitowner += ' ' + self.item['Owner2']
+    unitowner += ' of '
+    unitowner += self.item['Owner City']
+    unitowner += ', '
+    unitowner += self.item['Owner State']
+    unitowner += '.'
+    self.landlord.text = unitowner
+    
+    self.unitclass.text = self.item['Class']
     self.landuse.text = self.item['Land Use Code']
+
     if self.item['Exmption'] == '2to4 unit building one of which landlord occupies':
       self.landlordlivesthere.text = "claims to"
     else:
