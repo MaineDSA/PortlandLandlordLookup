@@ -7,7 +7,7 @@ components:
     foreground: '', visible: true, font_size: null, content: '### {address}
 
       This building is listed as containing {NumberOfRentalUnits} units. Its land
-      use code is {LandUseCode} and the landlord {LiveInLandlord} live in the building.',
+      use code is "{LandUseCode}" and the landlord {LiveInLandlord} live in the building.',
     font: '', spacing_above: small, spacing_below: small, data: null, background: '',
     format: markdown}
   name: rich_text_1

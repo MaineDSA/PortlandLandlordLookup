@@ -9,7 +9,7 @@ def find_by_landlord(**kwargs):
   landlord = str(kwargs.get('landlord', None))
 
   # Find all units that match the landlord name
-  units = app_tables.units2.search(q.any_of(
+  units = app_tables.units.search(q.any_of(
       #tables.order_by('unitNumber1'),
       Owner1=q.ilike(f'%{landlord}%'),
       Owner2=q.ilike(f'%{landlord}%'),
