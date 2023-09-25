@@ -19,26 +19,16 @@ class BuildingUnits(BuildingUnitsTemplate):
     elif (self.item['Likely to Exempt'] == True):
       questiona += '**is** likely to be kicked off of rent control if Question A passes.'
     else:
-      questiona += '**may not be** kicked off of rent control if Question A passes.'
-      questiona += ' However, if the landlord changes the ownership structure this unit could easily suffer the same fate as the 4,300 other units we have identified as likely to lose protections.'
+      questiona += '**may not be** kicked off of rent control if Question A passes. However, if the landlord changes the ownership structure this unit could easily suffer the same fate as the 4,300 other units we have identified as likely to lose protections.'
     self.questiona.content = questiona
 
-    currentrent = 'The official rent for this '
-    currentrent += self.item['nbrBedRms1']
-    currentrent += '-bedroom unit as of November 2022 was $' + self.item['CurrentRent1'] + '.'
+    currentrent = f"The official rent for this {self.item['nbrBedRms1']}-bedroom unit as of November 2022 was ${self.item['CurrentRent1']}."
     if (float(self.item['CurrentRent1']) == 0) or (float(self.item['nbrBedRms1']) == 0):
-      currentrent += ' Some reasons for the missing information could be: improper reporting, some types of exempt units, or data issues from the Housing Safety Office.'
+      currentrent += ' Some reasons for the missing information could be: some types of exempt units, improper reporting, or data issues from the Housing Safety Office.'
     self.currentrent.text = currentrent
 
-    unitowner = 'The landlord is listed as '
-    unitowner += self.item['Owner1']
     if self.item['Owner2']:
-      unitowner += ' ' + self.item['Owner2']
-    unitowner += ' of '
-    unitowner += self.item['Owner City']
-    unitowner += ', '
-    unitowner += self.item['Owner State']
-    unitowner += '.'
-    self.unitowner.text = unitowner
+      self.item['Owner2'] += f" "
+    self.unitowner.text = f"The landlord is listed as {self.item['Owner1']} {self.item['Owner2']}of {self.item['Owner City']}, {self.item['Owner State']}."
 
     self.viewlandlord.url = "https://no-on-a.anvil.app/#?l=" + self.item['Owner1']

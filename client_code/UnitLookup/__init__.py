@@ -10,13 +10,15 @@ class UnitLookup(UnitLookupTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+
     url_query = get_url_hash()
-    if url_query:
-      if 'u' in url_query:
-        self.textbox_address_unit.text = url_query['u']
-      if 'a' in url_query:
-        self.textbox_address.text = url_query['a']
-        self.query_lookup()
+    if not url_query:
+      return
+    if 'u' in url_query:
+      self.textbox_address_unit.text = url_query['u']
+    if 'a' in url_query:
+      self.textbox_address.text = url_query['a']
+      self.query_lookup()
 
   def query_lookup(self):
     # Give up if no address is supplied
@@ -36,10 +38,11 @@ class UnitLookup(UnitLookupTemplate):
       self.retrievedinfo.visible = True
       self.tenantcontact.visible = True
       self.copylink.visible = True
-    else:
-      self.retrievedinfo.visible = False
-      self.tenantcontact.visible = False
-      self.copylink.visible = False
+      return True
+
+    self.retrievedinfo.visible = False
+    self.tenantcontact.visible = False
+    self.copylink.visible = False
 
   # Triggering when button is clicked
   def submit_click(self, **event_args):

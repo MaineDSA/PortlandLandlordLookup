@@ -10,11 +10,14 @@ class LandlordLookup(LandlordLookupTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+
     url_query = get_url_hash()
-    if url_query:
-      if 'l' in url_query:
-        self.textbox_landlord.text = url_query['l']
-        self.query_lookup()
+    if not url_query:
+      return
+
+    if 'l' in url_query:
+      self.textbox_landlord.text = url_query['l']
+      self.query_lookup()
 
   def query_lookup(self):
     # Give up if no address is supplied
@@ -33,9 +36,10 @@ class LandlordLookup(LandlordLookupTemplate):
     if self.buildings.items:
       self.retrievedinfo.visible = True
       self.copylink.visible = True
-    else:
-      self.retrievedinfo.visible = False
-      self.copylink.visible = False
+      return True
+
+    self.retrievedinfo.visible = False
+    self.copylink.visible = False
 
   # Triggering when button is clicked
   def search_click(self, **event_args):
