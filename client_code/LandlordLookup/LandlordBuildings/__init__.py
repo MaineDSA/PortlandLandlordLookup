@@ -15,15 +15,9 @@ class LandlordBuildings(LandlordBuildingsTemplate):
 
     self.numberofrentalunits.text = self.item['NumberOfRentalUnits']
 
-    unitowner = self.item['Owner1']
     if self.item['Owner2']:
-      unitowner += ' ' + self.item['Owner2']
-    unitowner += ' of '
-    unitowner += self.item['Owner City']
-    unitowner += ', '
-    unitowner += self.item['Owner State']
-    unitowner += '.'
-    self.landlord.text = unitowner
+      self.item['Owner2'] += " "
+    self.landlord.text = f"{self.item['Owner1']} {self.item['Owner2']}of {self.item['Owner City']}, {self.item['Owner State']}."
     
     self.unitclass.text = self.item['Class']
     self.landuse.text = self.item['Land Use Code']

@@ -11,12 +11,10 @@ class BuildingUnits(BuildingUnitsTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    liveinlandlord = (self.item['Exmption'] == '2to4 unit building one of which landlord occupies')
+    self.unittitle.text = f"{self.item['Address']}, {self.item['unitNumber1']}"
     
-    self.unittitle.text = self.item['Address'] + ', ' + self.item['unitNumber1']
-
     questiona = 'This unit '
-    if (liveinlandlord):
+    if (self.item['Exmption'] == '2to4 unit building one of which landlord occupies'):
       questiona += 'is already exempt as the landlord claims to live in the building.'
     elif (self.item['Likely to Exempt'] == True):
       questiona += '**is** likely to be kicked off of rent control if Question A passes.'
