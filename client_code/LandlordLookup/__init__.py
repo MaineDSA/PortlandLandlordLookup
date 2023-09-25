@@ -49,7 +49,7 @@ class LandlordLookup(LandlordLookupTemplate):
     self.query_lookup()
 
   def copylink_click(self, **event_args):
-    link = "https://no-on-a.anvil.app/#?l=" + {self.textbox_landlord.text}
+    link = f"https://no-on-a.anvil.app/#?l={self.textbox_landlord.text}"
     navigator.clipboard.writeText(link)
-    n = Notification(content="Copied " + {link} + " to clipboard.", title="Link Copied", large=False)
+    n = Notification(f"Copied \"{link}\" to clipboard.", title="Link Copied")
     n.show()

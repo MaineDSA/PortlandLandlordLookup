@@ -66,7 +66,7 @@ class UnitLookup(UnitLookupTemplate):
       self.tenantcontact.visible = False
 
   def copylink_click(self, **event_args):
-    link = "https://no-on-a.anvil.app/#?a=" + {self.textbox_address.text} + "&u=" + {self.textbox_address_unit.text}
+    link = f"https://no-on-a.anvil.app/#?a={self.textbox_address.text}&u={self.textbox_address_unit.text}"
     navigator.clipboard.writeText(link)
-    n = Notification(content="Copied " + {link} + " to clipboard.", title="Link Copied", large=False)
+    n = Notification(f"Copied \"{link}\" to clipboard.", title="Link Copied")
     n.show()

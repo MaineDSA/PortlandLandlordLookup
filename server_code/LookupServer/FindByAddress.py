@@ -47,5 +47,5 @@ def find_by_address(**kwargs):
   # If not, show the building matches
   if len(unit_matches) > 0:
     return unit_matches
-  else:
-    return building_units
+
+  return building_units
