@@ -30,7 +30,7 @@ class LandlordLookup(LandlordLookupTemplate):
     if not found_buildings:
       return False
     self.buildings.items = found_buildings
-    n = Notification('Found ' + str(len(self.buildings.items)) + ' matching buildings.')
+    n = Notification(f"Found {len(self.buildings.items)} matching buildings.")
     n.show()
 
     if self.buildings.items:
@@ -49,7 +49,7 @@ class LandlordLookup(LandlordLookupTemplate):
     self.query_lookup()
 
   def copylink_click(self, **event_args):
-    link = "https://no-on-a.anvil.app/#?l=" + self.textbox_landlord.text
+    link = f"https://no-on-a.anvil.app/#?l={self.textbox_landlord.text}"
     navigator.clipboard.writeText(link)
-    n = Notification(content="Copied " + link + " to clipboard.", title="Search Complete", large=False)
+    n = Notification(content=f"Copied {link} to clipboard.", title="Link Copied", large=False)
     n.show()

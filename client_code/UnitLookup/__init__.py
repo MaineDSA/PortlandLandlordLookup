@@ -31,7 +31,7 @@ class UnitLookup(UnitLookupTemplate):
     if not found_units:
       return False
     self.units.items = found_units
-    n = Notification('Found ' + str(len(self.units.items)) + ' matching units.')
+    n = Notification(f"Found {len(self.units.items)} matching units.")
     n.show()
 
     if self.units.items:
@@ -66,7 +66,7 @@ class UnitLookup(UnitLookupTemplate):
       self.tenantcontact.visible = False
 
   def copylink_click(self, **event_args):
-    link = "https://no-on-a.anvil.app/#?a=" + self.textbox_address.text + "&u=" + self.textbox_address_unit.text
+    link = f"https://no-on-a.anvil.app/#?a={self.textbox_address.text}&u={self.textbox_address_unit.text}"
     navigator.clipboard.writeText(link)
-    n = Notification(content="Copied " + link + " to clipboard.", title="Search Complete", large=False)
+    n = Notification(content=f"Copied {link} to clipboard.", title="Link Copied", large=False)
     n.show()
