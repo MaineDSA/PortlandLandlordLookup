@@ -8,6 +8,8 @@ components:
 
       {questionA}
 
+      {questionADisclaimer}
+
       {currentRent}
 
       {unitOwner}', font: '', spacing_above: none, spacing_below: none, data: null,
@@ -30,13 +32,24 @@ components:
     name: currentrent
     layout_properties: {slot: currentRent}
   - type: RichText
-    properties: {}
+    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+      foreground: '', visible: true, font_size: 18, content: '', font: '', spacing_above: small,
+      spacing_below: small, data: null, background: '', format: markdown}
     name: questiona
     layout_properties: {slot: questionA}
   - type: Label
     properties: {}
     name: unitowner
     layout_properties: {slot: unitOwner}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: false, text: 'However, if the landlord changes the ownership structure
+        this unit could easily suffer the same fate as the 4,300 other units we have
+        identified as likely to lose protections.', font_size: null, font: '', spacing_above: none,
+      icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: questionadisclaimer
+    layout_properties: {slot: questionADisclaimer}
   data_bindings: []
 - type: Spacer
   properties: {visible: true, spacing_above: small, spacing_below: small, height: 125,

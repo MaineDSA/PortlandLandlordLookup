@@ -31,7 +31,8 @@ class UnitLookup(UnitLookupTemplate):
       return False
 
     found_units = anvil.server.call('find_by_address', address=self.textbox_address.text, unit=self.textbox_address_unit.text)
-    if not found_units:
+    if len(found_units) == 0:
+      n = Notification("No units found.")
       return False
     elif (len(found_units) == 1) & (found_units[0]['Likely to Exempt'] == True):
       anvil.server.call(
