@@ -17,9 +17,10 @@ components:
   - type: Link
     properties: {role: null, url: 'https://www.mainedsa.org/maine-dsa-campaigns-and-projects/vote-no-on-a?refcode=landlord-lookup',
       align: left, tooltip: '', border: thin solid, foreground: 'theme:On Primary',
-      visible: true, text: No on A, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
-      spacing_above: none, icon_align: left, col_widths: '', spacing_below: medium,
-      italic: false, background: '', bold: false, underline: false, icon: 'fa:heart-o'}
+      visible: true, text: Learn More, font_size: null, wrap_on: mobile, font: '',
+      col_spacing: medium, spacing_above: none, icon_align: left, col_widths: '',
+      spacing_below: medium, italic: false, background: '', bold: false, underline: false,
+      icon: 'fa:bookmark'}
     name: no_on_a
     layout_properties: {}
   - type: Link
