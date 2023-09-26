@@ -29,8 +29,9 @@ components:
       If you don''t specify a unit, it''ll show the whole building. If no units are
       found at the address you input, your search will also include the address +
       2 and the address - 2 as some multi-unit buildings are assigned numbers this
-      way.', font: '', spacing_above: small, spacing_below: small, data: null, background: '',
-    format: markdown}
+      way. If you''re not finding your address, leave off the type of road it is (Street,
+      Way, Road, etc) as it may be abbreviated (or not) on the registration.', font: '',
+    spacing_above: small, spacing_below: small, data: null, background: '', format: markdown}
   name: text_ask
   layout_properties:
     col_widths: {}

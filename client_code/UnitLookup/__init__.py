@@ -15,9 +15,9 @@ class UnitLookup(UnitLookupTemplate):
     if not url_query:
       return
     if 'u' in url_query:
-      self.textbox_address_unit.text = url_query['u']
+      self.textbox_address_unit.text = url_query['u'].replace('"', '')
     if 'a' in url_query:
-      self.textbox_address.text = url_query['a']
+      self.textbox_address.text = url_query['a'].replace('"', '')
       self.query_lookup()
 
   def query_lookup(self):
