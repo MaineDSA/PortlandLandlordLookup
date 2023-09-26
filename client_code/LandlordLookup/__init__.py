@@ -22,7 +22,7 @@ class LandlordLookup(LandlordLookupTemplate):
   def query_lookup(self):
     # Give up if no address is supplied
     if not self.textbox_landlord.text:
-      n = Notification()("No landlord name entered.")
+      n = Notification("No landlord name entered.")
       n.show()
       return False
 
