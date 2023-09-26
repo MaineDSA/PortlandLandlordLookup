@@ -27,8 +27,9 @@ class BuildingUnits(BuildingUnitsTemplate):
       currentrent += ' Some reasons for the missing information could be: some types of exempt units, improper reporting, or data issues from the Housing Safety Office.'
     self.currentrent.text = currentrent
 
+    owner2 = ''
     if self.item['Owner2']:
-      self.item['Owner2'] += f" "
-    self.unitowner.text = f"The landlord is listed as {self.item['Owner1']} {self.item['Owner2']}of {self.item['Owner City']}, {self.item['Owner State']}."
+      owner2 += f" "
+    self.unitowner.text = f"The landlord is listed as {self.item['Owner1']} {owner2}of {self.item['Owner City']}, {self.item['Owner State']}."
 
     self.viewlandlord.url = "https://no-on-a.anvil.app/#?l=" + self.item['Owner1']
