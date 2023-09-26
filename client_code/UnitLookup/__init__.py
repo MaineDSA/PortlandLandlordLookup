@@ -18,18 +18,28 @@ class UnitLookup(UnitLookupTemplate):
       self.textbox_address_unit.text = url_query['u'].replace('"', '')
     if 'a' in url_query:
       self.textbox_address.text = url_query['a'].replace('"', '')
-      self.query_lookup()
 
   def query_lookup(self):
     # Give up if no address is supplied
     if not self.textbox_address.text:
-      n = Notification()("No street address entered.")
+      n = Notification("No street address entered.")
+      n.show()
+      return False
+    if not self.textbox_email.text or not '@' in self.textbox_email.text:
+      n = Notification("No email address entered.")
       n.show()
       return False
 
     found_units = anvil.server.call('find_by_address', address=self.textbox_address.text, unit=self.textbox_address_unit.text)
     if not found_units:
       return False
+    elif (len(found_units) == 1) & (found_units[0]['Likely to Exempt'] == True):
+      anvil.server.call(
+          'save_data',
+          email=self.textbox_email.text,
+          address=self.textbox_address.text,
+          unit=self.textbox_address_unit.text
+      )
     self.units.items = found_units
     n = Notification(f"Found {len(self.units.items)} matching units.")
     n.show()
@@ -58,8 +68,6 @@ class UnitLookup(UnitLookupTemplate):
         lastname=self.tenantname_last.text,
         email=self.tenantemail.text,
         story=self.tenantstory.text,
-        address=self.textbox_address.text,
-        unit=self.textbox_address_unit.text
     )
     if saved_message:
       self.messagesubmitted.visible = True

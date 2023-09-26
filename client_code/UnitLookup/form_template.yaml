@@ -30,14 +30,25 @@ components:
       found at the address you input, your search will also include the address +
       2 and the address - 2 as some multi-unit buildings are assigned numbers this
       way. If you''re not finding your address, leave off the type of road it is (Street,
-      Way, Road, etc) as it may be abbreviated (or not) on the registration.', font: '',
-    spacing_above: small, spacing_below: small, data: null, background: '', format: markdown}
+      Way, Road, etc) as it may be abbreviated (or not) on the registration.
+
+
+      By providing your email address below, you consent to allowing us to email you
+      about No on A.', font: '', spacing_above: small, spacing_below: small, data: null,
+    background: '', format: markdown}
   name: text_ask
   layout_properties:
     col_widths: {}
     grid_position: FNWDHB,ZEMSQP
 - type: TextBox
-  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Street Address (eg 565 Congress St),
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Your Email Address *,
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: textbox_email
+  layout_properties: {grid_position: 'FMOJPZ,SLHJUL'}
+- type: TextBox
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Street Address * (eg 565 Congress St),
     border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
     font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
     background: '', bold: false, underline: false}
