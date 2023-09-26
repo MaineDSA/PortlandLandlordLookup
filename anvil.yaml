@@ -29,6 +29,8 @@ db_schema:
     - {name: firstname, admin_ui: null, type: string}
     - {name: lastname, admin_ui: null, type: string}
     - {name: story, admin_ui: null, type: string}
+    - {name: address, admin_ui: null, type: string}
+    - {name: unit, admin_ui: null, type: string}
     title: Messages
   units:
     title: Units
