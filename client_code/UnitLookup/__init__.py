@@ -30,11 +30,16 @@ class UnitLookup(UnitLookupTemplate):
       n.show()
       return False
 
+    self.textcontactustitle.text = 'Contact Us'
+    self.textcontactusbody.text = 'Want to learn more and help keep Portland tenants safe? Leave your name and email here!'
+
     found_units = anvil.server.call('find_by_address', address=self.textbox_address.text, unit=self.textbox_address_unit.text)
     if len(found_units) == 0:
       n = Notification("No units found.")
       return False
     elif (len(found_units) == 1) & (found_units[0]['Likely to Exempt'] == True):
+      self.textcontactustitle.text = 'Your unit could lose rent control!'
+      self.textcontactusbody.text = "It's not too late to save it! Election day is November 7th. Get involved!"
       anvil.server.call(
           'save_data',
           email=self.textbox_email.text,

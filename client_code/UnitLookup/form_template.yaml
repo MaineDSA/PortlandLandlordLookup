@@ -145,14 +145,21 @@ components:
   components:
   - type: RichText
     properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-      foreground: '', visible: true, font_size: null, content: '## Contact Us
+      foreground: '', visible: true, font_size: null, content: '## {Contact Us}
 
-        Want to learn more and help keep Portland tenants safe? Leave your name and
-        email here!', font: '', spacing_above: small, spacing_below: small, data: null,
+        {ContactUsBody}', font: '', spacing_above: small, spacing_below: small, data: null,
       background: '', format: markdown}
     name: textcontacttitle
     layout_properties: {grid_position: 'KYQKDC,DZBBWK'}
-    components: []
+    components:
+    - type: Label
+      properties: {}
+      name: textcontactustitle
+      layout_properties: {slot: Contact Us}
+    - type: Label
+      properties: {}
+      name: textcontactusbody
+      layout_properties: {slot: ContactUsBody}
   - type: TextBox
     properties: {role: outlined, align: left, hide_text: false, tooltip: '', placeholder: First Name,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
