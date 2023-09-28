@@ -15,6 +15,7 @@ class UnitLookup(UnitLookupTemplate):
 
     BYPASS = False
     url_query = get_url_hash()
+    print(url_query)
     if not url_query:
       return
     if 'u' in url_query:
@@ -30,7 +31,7 @@ class UnitLookup(UnitLookupTemplate):
       n = Notification("No street address entered.")
       n.show()
       return False
-    if not BYPASS and (not self.textbox_email.text or not '@' in self.textbox_email.text):
+    if BYPASS == False and (not self.textbox_email.text or not '@' in self.textbox_email.text):
       n = Notification("No email address entered.")
       n.show()
       return False
@@ -44,7 +45,7 @@ class UnitLookup(UnitLookupTemplate):
       return False
     elif (len(found_units) == 1) & (found_units[0]['Likely to Exempt'] == True):
       self.textcontactustitle.text = 'Your unit could lose rent control!'
-      self.textcontactusbody.text = "It's not too late to save it! Election day is November 7th. Get involved!"
+      self.textcontactusbody.text = "Please fill out the below to help prevent that from happening.\nElection day is November 7th. Get involved!"
       if not BYPASS:
         anvil.server.call(
             'save_data',
