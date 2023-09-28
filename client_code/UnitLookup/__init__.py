@@ -6,11 +6,14 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from anvil.js.window import navigator
 
+BYPASS = False
+
 class UnitLookup(UnitLookupTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
+    BYPASS = False
     url_query = get_url_hash()
     if not url_query:
       return
@@ -18,6 +21,8 @@ class UnitLookup(UnitLookupTemplate):
       self.textbox_address_unit.text = url_query['u'].replace('"', '')
     if 'a' in url_query:
       self.textbox_address.text = url_query['a'].replace('"', '')
+    if 'b' in url_query:
+      BYPASS = True
 
   def query_lookup(self):
     # Give up if no address is supplied
@@ -25,7 +30,7 @@ class UnitLookup(UnitLookupTemplate):
       n = Notification("No street address entered.")
       n.show()
       return False
-    if not self.textbox_email.text or not '@' in self.textbox_email.text:
+    if not BYPASS and (not self.textbox_email.text or not '@' in self.textbox_email.text):
       n = Notification("No email address entered.")
       n.show()
       return False
@@ -40,12 +45,13 @@ class UnitLookup(UnitLookupTemplate):
     elif (len(found_units) == 1) & (found_units[0]['Likely to Exempt'] == True):
       self.textcontactustitle.text = 'Your unit could lose rent control!'
       self.textcontactusbody.text = "It's not too late to save it! Election day is November 7th. Get involved!"
-      anvil.server.call(
-          'save_data',
-          email=self.textbox_email.text,
-          address=self.textbox_address.text,
-          unit=self.textbox_address_unit.text
-      )
+      if not BYPASS:
+        anvil.server.call(
+            'save_data',
+            email=self.textbox_email.text,
+            address=self.textbox_address.text,
+            unit=self.textbox_address_unit.text
+        )
     self.units.items = found_units
     n = Notification(f"Found {len(self.units.items)} matching units.")
     n.show()
