@@ -13,9 +13,7 @@ class UnitLookup(UnitLookupTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    BYPASS = False
     url_query = get_url_hash()
-    print(url_query)
     if not url_query:
       return
     if 'u' in url_query:
