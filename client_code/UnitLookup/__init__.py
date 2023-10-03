@@ -29,13 +29,9 @@ class UnitLookup(UnitLookupTemplate):
       n = Notification("No street address entered.")
       n.show()
       return False
-    if BYPASS == False and (not self.textbox_email.text or not '@' in self.textbox_email.text):
-      n = Notification("No email address entered.")
-      n.show()
-      return False
 
     self.textcontactustitle.text = 'Contact Us'
-    self.textcontactusbody.text = 'Want to learn more and help keep Portland tenants safe? Leave your name and email here!'
+    self.textcontactusbody.text = "Want to learn more and help keep Portland tenants safe? Leave your name and email here!"
 
     found_units = anvil.server.call('find_by_address', address=self.textbox_address.text, unit=self.textbox_address_unit.text)
     if len(found_units) == 0:
@@ -44,13 +40,7 @@ class UnitLookup(UnitLookupTemplate):
     elif (len(found_units) == 1) & (found_units[0]['Likely to Exempt'] == True):
       self.textcontactustitle.text = 'Your unit could lose rent control!'
       self.textcontactusbody.text = "Please fill out the below to help prevent that from happening.\nElection day is November 7th. Get involved!"
-      if not BYPASS:
-        anvil.server.call(
-            'save_data',
-            email=self.textbox_email.text,
-            address=self.textbox_address.text,
-            unit=self.textbox_address_unit.text
-        )
+
     self.units.items = found_units
     n = Notification(f"Found {len(self.units.items)} matching units.")
     n.show()

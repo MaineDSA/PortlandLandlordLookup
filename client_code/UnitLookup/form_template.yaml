@@ -34,23 +34,12 @@ components:
 
       As the registrations are inconsistent with their use of road types (st/street/etc),
       we recommend entering an address like "655 Congress" instead of "655 Congress
-      Street".
-
-
-      By providing your email address below, you consent to allowing us to email you
-      about No on A.', font: '', spacing_above: small, spacing_below: small, data: null,
+      Street".', font: '', spacing_above: small, spacing_below: small, data: null,
     background: '', format: markdown}
   name: text_ask
   layout_properties:
     col_widths: {}
     grid_position: FNWDHB,ZEMSQP
-- type: TextBox
-  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Your Email Address *,
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-    background: '', bold: false, underline: false}
-  name: textbox_email
-  layout_properties: {grid_position: 'FMOJPZ,SLHJUL'}
 - type: TextBox
   properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Street Address * (eg 565 Congress St),
     border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
